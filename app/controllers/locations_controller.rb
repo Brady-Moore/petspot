@@ -2,7 +2,11 @@ class LocationsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index ]
 
   def index
-    @locations = Location.all
+    if params[:query].present?
+      @locations = Location.search(params[:query])
+    else
+      @locations = Location.all
+    end
   end
 
   def show
