@@ -7,3 +7,18 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+Location.create!(
+  owner_id: 1,
+  name: "Pet Paradise Café",
+  category: "Cafe",
+  address: "123 Dog St.",
+  city: "Tokyo",
+  prefecture: "Tokyo",
+  postal_code: "123-4567",
+  lat: 35.689487,
+  lng: 139.691711,
+  website: "https://petparadise.jp",
+  phone: "03-1234-5678",
+  source: "seed"
+)
