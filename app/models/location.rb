@@ -1,4 +1,6 @@
 class Location < ApplicationRecord
+  acts_as_favoritable
+  
   belongs_to :owner, class_name: "User", optional: true
   has_many :reviews, dependent: :destroy
 

@@ -1,0 +1,6 @@
+<%= turbo_stream.remove dom_id(@location) %>
+<% if @favorites.empty? %>
+  <%= turbo_stream.replace "favorites-list" do %>
+    <p class="text-center my-5">You haven’t favorited any locations yet.</p>
+  <% end %>
+<% end %>
