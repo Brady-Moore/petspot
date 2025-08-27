@@ -1,7 +1,6 @@
 <%= simple_form_for :search, url: locations_path, method: :get do |f| %>
   <div class="search-form-control form-group">
-    <input class="form-control string required" data-bs-toggle="offcanvas" data-bs-target="#searchOffcanvasBottom" placeholder="Search location" value="<%= params[:query] %>" type="text" name="query" id="search_query" />
-    <button name="button" type="submit" class="btn btn-info rounded-circle">
+    <button name="button" type="button" class="btn btn-info rounded-circle" data-bs-toggle="offcanvas" data-bs-target="#searchOffcanvasBottom" placeholder="Search location" value="<%= params[:query] %>" type="text" name="query" id="search_query">
       <i class="fas fa-search"></i>
     </button>
   </div>
