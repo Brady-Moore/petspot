@@ -1,2 +1,45 @@
-<h1>Locations#show</h1>
-<p>Find me in app/views/locations/show.html.erb</p>
+<div class="image d-flex align-items-center justify-content-center">
+  <p>Image here</p>
+</div>
+
+<h2 class="ms-3 mt-3 mb-0 fw-bold"><%= @location.name %></h2>
+<p class="ps-3 location-address">● <%= @location.category %></p>
+
+<p class="ps-3 mb-0 location-address"><%= @location.address %></p>
+<p class="ps-3 location-address">〒<%= @location.postal_code %></p>
+
+<p class="amenity-title ms-3">Amenities:</p>
+<div class="d-flex justify-content-center gap-4 flex-wrap">
+  <% @location.amenities.each do |amenity| %>
+    <div class="amenity text-center">
+      <div class="amenity-icon rounded-circle d-flex align-items-center justify-content-center mx-auto">
+        <i class="<%= amenity.icon_class %>"></i>
+      </div>
+      <div class=" amenity-label mt-2 justify-content-center">
+        <%= amenity.label %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="text-center"> <!-- break line -->
+  <p>⸺⸺⸺⸺⸺⸺⸺⸺⸺⸺⸺</p>
+</div>
+
+<h3 class="ms-3 mt-3 mb-0 fw-bold">Reviews:</h3>
+<div class="d-flex align-items-center justify-content-center">
+  <!-- review display here -->
+  <p class="ms-3 me-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos magni similique sapiente architecto fugiat quis quae at tempora esse distinctio sint eligendi perferendis quos, nisi labore magnam quo laudantium delectus?</p>
+</div>
+
+<div class="text-center"> <!-- break line -->
+  <p>⸺⸺⸺⸺⸺⸺⸺⸺⸺⸺⸺</p>
+</div>
+
+<p class="location-map ms-3">Location: </p>
+<!-- map display here -->
+<div class="image-map d-flex align-items-center justify-content-center">
+  <p>map here</p>
+</div>
+
+
