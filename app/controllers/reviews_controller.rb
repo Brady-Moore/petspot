@@ -4,12 +4,14 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
+    @review.user = current_user
     @location = Location.find(params[:location_id])
     @review.location = @location
     if @review.save
-      redirects_to location_path(@location)
+      redirect_to location_path(@location)
     else
-      render 'new', status: :unprocessable_content
+      puts "FAILED"
+      render 'locations/show', status: :unprocessable_content
     end
   end
 
@@ -22,6 +24,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:location_id, :user_id, :rating, :body)
+    params.require(:review).permit(:location_id, :rating, :body)
   end
 end
