@@ -11,6 +11,7 @@ class LocationsController < ApplicationController
 
   def show
     @location = Location.find(params[:id])
+    @review = Review.new
   end
 
   def new
