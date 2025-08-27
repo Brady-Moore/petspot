@@ -73,3 +73,6 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "acts_as_favoritor", "~> 6.0"
+gem "pg_search"
