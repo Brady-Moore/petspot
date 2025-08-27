@@ -1,22 +1,32 @@
 <div class="container my-3">
   <h1 class="text-center">My Favorite Locations</h1>
-  <% if @favorites.any? %>
-    <div class="cards">
-      <% @favorites.each do |fav| %>
-        <div class="card-trip my-3">
-          <%# TODO: Use Cloudinary Image %>
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-          <div class="card-trip-infos">
-            <div>
-              <h2><%= fav.name %></h2>
-              <p><%= fav.category %></p>
-            </div>
+  <div id="favorites-list">
+    <% if @favorites.any? %>
+      <div class="cards">
+        <% @favorites.each do |fav| %>
+          <div id="<%= dom_id(fav) %>" class="card-trip my-3 position-relative">
+            <!-- Delete (top-right) -->
+            <%= link_to favorite_path(fav),
+                      data: { turbo_method: :delete, turbo_confirm: "Remove #{fav.name} from favorites?" },
+                      class: "position-absolute top-0 end-0 m-2 text-danger fs-4" do %>
+              <i class="fa-solid fa-circle-xmark"></i>
+            <% end %>
+            <!-- Clickable content (image + text only) -->
+            <%= link_to location_path(fav), class: "d-block text-decoration-none text-dark" do %>
+              <%# TODO: Use Cloudinary Image %>
+              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+              <div class="card-trip-infos">
+                <div>
+                  <h2><%= fav.name %></h2>
+                  <p><%= fav.category %></p>
+                </div>
+              </div>
+            <% end %>
           </div>
-          <%= link_to "", location_path(fav), class: "card-trip-link" %>
-        </div>
-      <% end %>
-    </div>
-  <% else %>
-    <p>You haven’t favorited any locations yet.</p>
-  <% end %>
+        <% end %>
+      </div>
+    <% else %>
+      <p class="text-center my-5">You haven’t favorited any locations yet.</p>
+    <% end %>
+  </div>
 </div>
