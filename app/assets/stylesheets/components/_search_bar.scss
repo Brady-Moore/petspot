@@ -1,0 +1,27 @@
+.search_container{
+  display: flex;
+  width: fit-content;
+  margin: 1rem auto;
+  background: rgb(205, 205, 205);
+  border-radius: 200px;
+  padding: 6px 12px;
+
+  button{
+      &:focus{
+      background-color: rgb(132, 132, 132);
+      border-radius: 200px;
+      box-shadow: 0 0 0 2px rgb(87, 87, 87);
+  }
+}
+  &:focus-within{
+    box-shadow: 0 0 0 2px rgb(140, 140, 140);
+  }
+
+  button, input{
+    background-color: transparent;
+    border: none;
+    &:focus{
+      outline:none;
+    }
+    }
+  }
