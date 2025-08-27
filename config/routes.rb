@@ -7,7 +7,8 @@ Rails.application.routes.draw do
     member do
       post   :favorite    # /locations/:id/favorite
       delete :unfavorite  # /locations/:id/unfavorite
+    end
   end
-  end
+  resources :favorites, only: [:index]
 end
 
