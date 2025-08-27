@@ -1,0 +1,16 @@
+<%= simple_form_for :search, url: locations_path, method: :get do |f| %>
+  <div class="search-form-control form-group">
+    <button name="button" type="button" class="btn btn-info rounded-circle" data-bs-toggle="offcanvas" data-bs-target="#searchOffcanvasBottom" placeholder="Search location" value="<%= params[:query] %>" type="text" name="query" id="search_query">
+      <i class="fas fa-search"></i>
+    </button>
+  </div>
+<% end %>
+<div class="offcanvas offcanvas-bottom" tabindex="-1" id="searchOffcanvasBottom" aria-labelledby="searchOffcanvasBottomLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="searchOffcanvasBottomLabel">Search</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body small">
+    <%= render "shared/search_bar" %>
+  </div>
+</div>
