@@ -1,18 +1,18 @@
-<nav class="navbar navbar-light bg-light border-top fixed-bottom">
+<nav class="navbar navbar-light border-top fixed-bottom bg-warning">
   <div class="container-fluid d-flex justify-content-around">
-    <%= link_to root_path, class: "text-center text-decoration-none" do %>
+    <%= link_to root_path, class: "text-center text-decoration-none text-white" do %>
       <i class="bi bi-house"></i><br>
       Home
     <% end %>
-    <%= link_to new_location_path, class: "text-center text-decoration-none" do %>
+    <%= link_to new_location_path, class: "text-center text-decoration-none text-white" do %>
       <i class="bi bi-plus-circle"></i><br>
       Add
     <% end %>
-    <%= link_to "#", class: "text-center text-decoration-none" do %>
+    <%= link_to favorites_path, class: "text-center text-decoration-none text-white" do %>
       <i class="bi bi-heart-fill"></i><br>
       Favorites
     <% end %>
-    <%= link_to "#", class: "text-center text-decoration-none" do %>
+    <%= link_to edit_user_registration_path, class: "text-center text-decoration-none text-white" do %>
       <i class="bi bi-person"></i><br>
       Profile
     <% end %>
