@@ -1,2 +1,55 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div id="carousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <%= image_tag "daniel-brunsteiner-_jd5ryWK5J4-unsplash.jpg", class: "d-block w-100", alt: "Dog"%>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag "Fountain_Yoyogipark.jpeg", class: "d-block w-100", alt: "Dog"%>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag "rui-alves-bUueTEY-FOc-unsplash.jpg", class: "d-block w-100", alt: "Dog"%>
+    </div>
+   </div>
+  </div>
+
+<%= form_with(url: locations_path, method: :get, local: true) do %>
+  <div class="search_container">
+    <input type="text" name="search" id="search">
+    <button type="submit" name="commit" data-disable-with="Search">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+  </div>
+<%end%>
+
+<div class="container-md d-flex justify-content-center bg-warning rounded-3 p-2">
+<div class="row w-75">
+  <div class="col-6 d-flex flex-column">
+    <input class="checkbox" id="checkbox">
+      <label for="Indoor">Indoor</label>
+    <input class="checkbox" id="checkbox">
+      <label for="Outdoor">Outdoor</label>
+      <input class="checkbox" id="checkbox">
+      <label for="Indoor">Indoor</label>
+    <input class="checkbox" id="checkbox">
+      <label for="Outdoor">Outdoor</label>
+      <input class="checkbox" id="checkbox">
+      <label for="Indoor">Indoor</label>
+    <input class="checkbox" id="checkbox">
+      <label for="Outdoor">Outdoor</label>
+  </div>
+  <div class="col-6 d-flex flex-column">
+    <input class="checkbox" id="checkbox">
+      <label for="Shade Area">Shade area</label>
+    <input class="checkbox" id="checkbox">
+      <label for="Patio">Patio</label>
+    <input class="checkbox" id="checkbox">
+      <label for="Shade Area">Shade area</label>
+    <input class="checkbox" id="checkbox">
+      <label for="Patio">Patio</label>
+    <input class="checkbox" id="checkbox">
+      <label for="Shade Area">Shade area</label>
+    <input class="checkbox" id="checkbox">
+      <label for="Patio">Patio</label>
+  </div>
+  </div>
+</div>
