@@ -1,6 +1,22 @@
-<h1>My Favorite Locations</h1>
-<ul>
-  <% @favorites.each do |loc| %>
-    <li><%= link_to loc.name, location_path(loc) %></li>
+<div class="container my-3">
+  <h1 class="text-center">My Favorite Locations</h1>
+  <% if @favorites.any? %>
+    <div class="cards">
+      <% @favorites.each do |fav| %>
+        <div class="card-trip my-3">
+          <%# TODO: Use Cloudinary Image %>
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= fav.name %></h2>
+              <p><%= fav.category %></p>
+            </div>
+          </div>
+          <%= link_to "", location_path(fav), class: "card-trip-link" %>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <p>You haven’t favorited any locations yet.</p>
   <% end %>
-</ul>
+</div>
