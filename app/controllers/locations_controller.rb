@@ -6,7 +6,14 @@ class LocationsController < ApplicationController
     @locations = @locations.search(params[:query]) if params[:query].present?
 
     if params[:amenities].present?
-      @locations = @locations.where(amenities: {key: params[:amenities]})
+      selected_amenities = params[:amenities]
+
+      @locations = Location.where(
+        id: Location.joins(:amenities)
+        .where(amenities: {key: selected_amenities })
+        .group("locations.id")
+        .having("COUNT(DISTINCT amenities.id) = ?", selected_amenities.size)
+      )
     end
   end
 
