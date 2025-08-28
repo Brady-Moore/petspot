@@ -1,0 +1,26 @@
+<nav class="top-bar navbar fixed-top border-bottom bg-warning">
+  <div class="container-fluid d-flex align-items-center justify-content-between">
+    <!-- Left: Back -->
+    <% unless current_page?(root_path) %>
+      <%= link_to "javascript:history.back()", class: "btn btn-link text-white p-0 m-0 d-flex align-items-center" do %>
+        <i class="bi bi-arrow-left-circle-fill fs-4"></i>
+      <% end %>
+    <% else %>
+      <span class="invisible"><i class="bi bi-arrow-left-circle-fill fs-4"></i></span>
+    <% end %>
+    <!-- Center: Brand -->
+    <span class="top-bar-title mx-2 text-white">petspot</span>
+    <!-- Right: Search trigger -->
+    <% unless current_page?(root_path) %>
+      <button class="btn text-white p-0 m-0 d-flex align-items-center"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#searchOffcanvasBottom"
+              aria-controls="searchOffcanvasBottom">
+        <i class="bi bi-search fs-4"></i>
+      </button>
+    <% else %>
+      <span class="invisible"><i class="bi bi-search fs-4"></i></span>
+    <% end %>
+  </div>
+</nav>
