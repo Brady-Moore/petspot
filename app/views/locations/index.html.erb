@@ -1,5 +1,6 @@
 <div class="container my-3">
 <%# <%= @locations.count%>
+<%if @locations.any? %>
   <h1>Your Search Results</h1>
   <div class="cards">
     <% @locations.each do |location| %>
@@ -16,4 +17,7 @@
       </div>
     <% end %>
   </div>
+  <% else %>
+  <h1>0 results</h1>
+  <% end %>
 </div>

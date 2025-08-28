@@ -7,7 +7,7 @@ class LocationsController < ApplicationController
 
     if params[:amenities].present?
       selected_amenities = params[:amenities]
-
+      # Do not touch
       @locations = Location.where(
         id: Location.joins(:amenities)
         .where(amenities: {key: selected_amenities })
