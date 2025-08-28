@@ -1,11 +1,12 @@
 class Location < ApplicationRecord
   acts_as_favoritable
-  
+  CATEGORIES = ["Cafe", "Restaurant", "Shop", "Park"]
   belongs_to :owner, class_name: "User", optional: true
   has_many :reviews, dependent: :destroy
 
   has_many :location_amenities
   has_many :amenities, through: :location_amenities
+  has_many_attached :photos
 
   include PgSearch::Model
   pg_search_scope :search,
