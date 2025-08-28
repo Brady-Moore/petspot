@@ -1,13 +1,32 @@
-<div class="image d-flex align-items-center justify-content-center">
-  <p>Image here</p>
+<div id="carouselExample" class="carousel slide">
+  <div class="carousel-inner">
+    <% if @location.photos.attached? %>
+      <% @location.photos.each_with_index do |photo, index| %>
+        <div class="carousel-item <%= "active" if index.zero? %>">
+          <%= cl_image_tag photo.key, class: "d-block w-100 rounded" %>
+        </div>
+      <% end %>
+    <% else %>
+      <div class="carousel-item active">
+        <%= image_tag "daniel-brunsteiner-_jd5ryWK5J4-unsplash.jpg", class: "d-block w-100 rounded" %>
+      </div>
+    <% end %>
+  </div>
+  <% if @location.photos.length > 1 %>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  <% end %>
 </div>
-
 <h2 class="ms-3 mt-3 mb-0 fw-bold"><%= @location.name %></h2>
 <p class="ps-3 location-address">● <%= @location.category %></p>
-
 <p class="ps-3 mb-0 location-address"><%= @location.address %></p>
 <p class="ps-3 location-address">〒<%= @location.postal_code %></p>
-
 <p class="amenity-title ms-3">Amenities:</p>
 <div class="d-flex justify-content-center gap-4 flex-wrap">
   <% @location.amenities.each do |amenity| %>
@@ -21,7 +40,6 @@
     </div>
   <% end %>
 </div>
-
 <div class="text-center"> <!-- break line -->
   <p>⸺⸺⸺⸺⸺⸺⸺⸺⸺⸺⸺</p>
 </div>
@@ -41,26 +59,23 @@
         <p class="ms-3"><%= review.user.name %></p>
         <p class="ms-3">- <%= review.body %></p>
         <p class="ms-3">
-        <% review.rating.times do %>
-          ★
-        <% end %>
-        <% (5 - review.rating).times do %>
-          ☆
-        <% end %>
-      </p>
+          <% review.rating.times do %>
+            ★
+          <% end %>
+          <% (5 - review.rating).times do %>
+            ☆
+          <% end %>
+        </p>
       </div>
     <% end %>
   </div>
 </div>
-
-
 <!-- Button trigger modal -->
 <div class="ms-3 mt-3">
   <button type="button" class="btn btn-info rounded-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
     Leave a review
   </button>
 </div>
-
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -84,16 +99,11 @@
     </div>
   </div>
 </div>
-
-
 <div class="text-center"> <!-- break line -->
   <p>⸺⸺⸺⸺⸺⸺⸺⸺⸺⸺⸺</p>
 </div>
-
 <p class="location-map ms-3">Location: </p>
 <!-- map display here -->
 <div class="image-map d-flex align-items-center justify-content-center">
   <p>map here</p>
 </div>
-
-
