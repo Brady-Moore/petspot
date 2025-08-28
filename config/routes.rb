@@ -9,6 +9,6 @@ Rails.application.routes.draw do
       delete :unfavorite  # /locations/:id/unfavorite
     end
   end
-  resources :favorites, only: [:index, :destroy]
+  resources :favorites, only: [:index, :destroy, :create]
 end
 

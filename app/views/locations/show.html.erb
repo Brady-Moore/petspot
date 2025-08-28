@@ -26,6 +26,10 @@
   <p>⸺⸺⸺⸺⸺⸺⸺⸺⸺⸺⸺</p>
 </div>
 
+ <%= link_to favorite_location_path(@location), method: :post, class: "text-center text-decoration-none text-white" do %>
+      <i class="bi bi-heart-fill btn btn-info rounded-5">Favorites</i>
+    <% end %>
+
 <h3 class="ms-3 mt-3 mb-0 fw-bold">Reviews:</h3>
 <div class="review-content-box d-flex align-items-center justify-content-center rounded-5 shadow">
   <!-- review display here -->
