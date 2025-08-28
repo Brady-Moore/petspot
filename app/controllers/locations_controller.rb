@@ -3,12 +3,12 @@ class LocationsController < ApplicationController
 
   def index
     @locations = Location.includes(:amenities)
-    @locations = @locations.search(params[:query]) if params[:query].present?
+    @locations = @locations.search(params[:search]) if params[:search].present?
 
     if params[:amenities].present?
       selected_amenities = params[:amenities]
       # Do not touch
-      @locations = Location.where(
+      @locations = @locations.where(
         id: Location.joins(:amenities)
         .where(amenities: {key: selected_amenities })
         .group("locations.id")
