@@ -8,8 +8,11 @@
   <div class="cards">
     <% @locations.each do |location| %>
       <div class="card-trip my-3">
-        <%# TODO: Use Cloudinary Image %>
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <% if location.photos.attached? %>
+          <%= cl_image_tag location.photos.first.key %>
+        <% else %>
+          <%= image_tag "daniel-brunsteiner-_jd5ryWK5J4-unsplash.jpg" %>
+        <% end %>
         <div class="card-trip-infos">
           <div>
             <h2><%= location.name %></h2>
