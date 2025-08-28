@@ -1,18 +1,18 @@
 .top-bar {
-  background-color: #fbce65; /* your yellow */
-  color: #fff;
-  z-index: 1030; /* above page content */
-  padding-top: max(env(safe-area-inset-top), 0px); /* iOS PWA safe area */
+  background-color: $primary;
+  color: $dark;
+  z-index: 1030;
+  padding-top: max(env(safe-area-inset-top), 0px);
 }
 
 .top-bar .top-bar-title {
-  color: #fff;
+  color: $dark; // use dark text for readability
   font-weight: 700;
-  font-size: 1.25rem; /* adjust to taste */
+  font-size: 1.25rem;
   letter-spacing: 0.5px;
 }
 
 .top-bar .btn-link,
 .top-bar i {
-  color: #fff !important;
+  color: $dark !important; // keep icons consistent with title
 }
