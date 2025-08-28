@@ -6,23 +6,55 @@
 
 // General style
 $font-family-sans-serif: $body-font;
-$headings-font-family:   $headers-font;
-$body-bg:                $bg-yellow;
-$font-size-base:         1rem;
+$headings-font-family: $headers-font;
+$font-size-base: 1rem;
 
-// Colors
-$body-color: $text-color;
-$primary:    $blue;
-$success:    $green;
-$info:       $yellow;
-$danger:     $red;
-$warning:    $orange;
+// Body colors
+$body-bg: $bg-yellow; // soft yellow background wash
+$body-color: $text-color; // dark gray text
 
-// Buttons & inputs' radius
-$border-radius-sm:            .0625rem;
-$border-radius:               .125rem;
-$border-radius-lg:            .25rem;
-$border-radius-xl:            .5rem;
-$border-radius-xxl:           1rem;
+// Core theme colors
+$primary: $yellow; // brand primary
+$secondary: #6b7280;
+$success: $green;
+$info: $blue;
+$danger: $red;
+$warning: $orange;
+$light: $light-gray;
+$dark: #1e293b; // rich dark for text/icons
 
-// Override other variables below! (bootstrap)
+// Make utilities (bg-*, text-*) aware of our palette
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
+);
+
+// Buttons: ensure readable text on yellow
+$btn-font-weight: 700;
+$btn-border-width: 0;
+$btn-primary-bg: $primary;
+$btn-primary-color: $dark; // dark text on yellow (better contrast)
+$btn-primary-hover-bg: darken($primary, 8%);
+$btn-primary-hover-color: $dark;
+
+// Links
+$link-color: $dark;
+$link-hover-color: darken($link-color, 10%);
+
+// Form focus ring
+$input-border-color: #e5e7eb;
+$input-focus-border-color: $info;
+$input-focus-box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25); // based on $blue
+
+// Radii
+$border-radius-sm: 0.0625rem;
+$border-radius: 0.125rem;
+$border-radius-lg: 0.25rem;
+$border-radius-xl: 0.5rem;
+$border-radius-xxl: 1rem;
