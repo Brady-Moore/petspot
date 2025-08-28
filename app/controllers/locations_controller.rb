@@ -2,13 +2,11 @@ class LocationsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index ]
 
   def index
-    @locations = params[:query].present? ? @locations.search(params[:query]) : Location.all
+    @locations = Location.includes(:amenities)
+    @locations = @locations.search(params[:query]) if params[:query].present?
 
     if params[:amenities].present?
-      @locations = @locations.select do |location|
-        location_amenities = location.amenities.map { |amenity| amenity.key }
-        params[:amenities].any? { |key| location_amenities.include?(key) }
-      end
+      @locations = @locations.where(amenities: {key: params[:amenities]})
     end
   end
 
