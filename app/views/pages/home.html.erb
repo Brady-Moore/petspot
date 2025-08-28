@@ -18,35 +18,30 @@
       <i class="fa-solid fa-magnifying-glass"></i>
     </button>
   </div>
-<%end%>
+
 <%# Filter %>
 <div class="container-md m-3 rounded-3 mx-auto border">
   <div class="container">
     <div class="row">
       <div class="col-6 d-flex flex-column">
-        <label for="SDogs">
-          <i class="fa-solid fa-paw"></i>
-          <span>Small Dogs</span>
-          <input type="checkbox" class="checkbox" id="SDogs">
-        </label>
-        <label for="LDogs">
-          <i class="fa-solid fa-paw"></i>
-          <span>Large Dogs</span>
-          <input type="checkbox" class="checkbox" id="LDogs">
-        </label>
+        <% @first_half.each do |amenity| %>
+          <label for="<%= amenity.key%>">
+            <i class="fa-solid fa-paw"></i>
+            <span><%= amenity.label%></span>
+            <input type="checkbox" name="amenities[]" class="checkbox" id="<%= amenity.key%>" value="<%= amenity.key%>">
+          </label>
+        <% end %>
       </div>
       <div class="col-6 d-flex flex-column">
-        <label for="Indoor">
-          <i class="fa-solid fa-paw"></i>
-          <span>Indoor</span>
-          <input type="checkbox" class="checkbox" id="Indoor">
-        </label>
-        <label for="Parks">
-          <i class="fa-solid fa-paw"></i>
-          <span>Parks</span>
-          <input type="checkbox" class="checkbox" id="Parks">
-        </label>
+        <% @second_half.each do |amenity| %>
+          <label for="<%= amenity.key%>">
+            <i class="fa-solid fa-paw"></i>
+            <span><%= amenity.label%></span>
+            <input type="checkbox" name="amenities[]"class="checkbox" id="<%= amenity.key%>" value="<%= amenity.key%>">
+          </label>
+        <% end %>
       </div>
+    <%end%>
       <%# more %>
       <i class="fa-regular fa-plus" onclick="this.remove()" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"></i>
       <div class="collapse" id="collapseExample">
