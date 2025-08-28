@@ -1,7 +1,10 @@
 <div class="container my-3">
 <%# <%= @locations.count%>
 <%if @locations.any? %>
-  <h1>Your Search Results</h1>
+   <h1>Your Search Results:</h1>
+    <p class="locations-found">
+    <%= @locations.length %> locations found
+    </p>
   <div class="cards">
     <% @locations.each do |location| %>
       <div class="card-trip my-3">
@@ -18,6 +21,10 @@
     <% end %>
   </div>
   <% else %>
-  <h1>0 results</h1>
+    <h1>Your Search Results:</h1>
+    <p class="locations-found">
+    <%= @locations.length %> locations found &#58;&#40;
+    </p>
+
   <% end %>
 </div>
