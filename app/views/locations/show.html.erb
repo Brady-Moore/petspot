@@ -64,7 +64,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="bg-info container rounded-5 shadow mt-5 card block">
+        <div class="bg-info container rounded-5 shadow card block">
           <h1 class="mt-3 fw-bold review-title">Leave a review for <%= @location.name %></h1>
           <div class="review-content">
             <%= simple_form_for [@location, @review] do |f| %>
