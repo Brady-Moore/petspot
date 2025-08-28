@@ -1,35 +1,37 @@
-label {
-  padding: 6px 8px;
-  margin:6px;
-  border-radius: 200px;
-  box-shadow:0 0 0 2px white;
-  display:flex;
+.filters {
+  label {
+    padding: 6px 8px;
+    margin:6px;
+    border-radius: 200px;
+    box-shadow:0 0 0 2px white;
+    display:flex;
 
-  span{
-    flex-grow:1;
-    text-align:center;
-    white-space: nowrap;
-    font-size: 13px;
+    span{
+      flex-grow:1;
+      text-align:center;
+      white-space: nowrap;
+      font-size: 13px;
+      }
+
+    .checkbox{
+      position:absolute;
+      transform: scale(0);
+    }
+    .fa-solid{
+      padding:4px;
+      background-color:#FBCE65;
+      border-radius:50%;
+    }
+    i::before {
+      opacity: 0;
     }
 
-  .checkbox{
-    position:absolute;
-    transform: scale(0);
-  }
-  .fa-solid{
-    padding:4px;
-    background-color:#FBCE65;
-    border-radius:50%;
-  }
-  i::before {
-    opacity: 0;
-  }
-
-  &:has(.checkbox:checked) {
-    background: #FBCE65;
-     background-color:rgba(0, 0, 0, .3);
-    i::before {
-      opacity: 1;
+    &:has(.checkbox:checked) {
+      background: #FBCE65;
+      background-color:rgba(0, 0, 0, .3);
+      i::before {
+        opacity: 1;
+      }
     }
   }
 }
