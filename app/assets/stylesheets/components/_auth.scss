@@ -1,0 +1,52 @@
+/* Auth pages */
+.auth {
+  min-height: calc(100vh - 64px);
+  background: $bg-yellow;
+}
+
+.auth-title {
+  font-family: $headers-font;
+  font-weight: 800;
+  font-size: 1.6rem;
+  color: $dark;
+}
+
+.auth-subtitle {
+  color: $secondary;
+  font-weight: 600;
+}
+
+.auth-input {
+  background: #d9dbe0;
+  border: 0;
+  height: 52px;
+  padding-left: 18px;
+  &::placeholder {
+    color: #fff;
+    opacity: 0.95;
+    font-weight: 800;
+  }
+}
+
+.auth-cta {
+  background-color: $primary;
+  color: $dark;
+  font-weight: 800;
+  height: 52px;
+  border: 0;
+  &:hover {
+    background-color: darken($primary, 8%);
+  }
+}
+
+.auth-cta-secondary {
+  background-color: $white;
+  border: 2px solid $primary;
+  color: $secondary;
+  font-weight: 800;
+  height: 52px;
+  &:hover {
+    background-color: lighten($primary, 35%);
+    color: $dark;
+  }
+}
