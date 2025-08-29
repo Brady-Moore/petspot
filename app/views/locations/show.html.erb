@@ -46,7 +46,7 @@
 
  <%= link_to favorite_location_path(@location), data: {turbo_method: :post, turbo_confirm: "Add #{@location.name} to favorites?" }, class: "text-center text-decoration-none text-white" do %>
     <div class="d-flex align-items-center justify-content-center">
-      <i class="bi bi-heart-fill btn btn-info rounded-5"></i>
+      <i class="bi bi-heart-fill red-heart btn btn-button rounded-5"></i>
     </div>
     <% end %>
 
