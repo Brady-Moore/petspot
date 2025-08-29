@@ -73,9 +73,16 @@
 </div>
 <!-- Button trigger modal -->
 <div class="ms-3 mt-3">
-  <button type="button" class="btn btn-info rounded-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Leave a review
-  </button>
+  <% if user_signed_in? %>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-info rounded-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Leave a review
+    </button>
+  <% else %>
+    <%= link_to "Leave a review", new_user_session_path,
+          class: "btn btn-info rounded-5",
+          data: { turbo: false } %>
+  <% end %>
 </div>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
