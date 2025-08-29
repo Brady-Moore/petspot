@@ -27,19 +27,22 @@
 <p class="ps-3 location-address">● <%= @location.category %></p>
 <p class="ps-3 mb-0 location-address"><%= @location.address %></p>
 <p class="ps-3 location-address">〒<%= @location.postal_code %></p>
-<p class="amenity-title ms-3">Amenities:</p>
-<div class="d-flex justify-content-center gap-4 flex-wrap">
-  <% @location.amenities.each do |amenity| %>
-    <div class="amenity text-center">
-      <div class="amenity-icon rounded-circle d-flex align-items-center justify-content-center mx-auto">
-        <i class="<%= amenity.icon_class %>"></i>
+<% @location.amenities.each_slice(4) do |group| %>
+  <div class="d-flex justify-content-center gap-4 flex-wrap">
+    <div class="col"></div>
+    <% group.each do |amenity| %>
+      <div style="" class="amenity text-center col">
+        <div class="amenity-icon rounded-circle d-flex align-items-center justify-content-center mx-auto">
+          <i class="<%= amenity.icon_class %>"></i>
+        </div>
+        <div class=" amenity-label mt-2 justify-content-center">
+          <%= amenity.key.humanize %>
+        </div>
       </div>
-      <div class=" amenity-label mt-2 justify-content-center">
-        <%= amenity.label %>
-      </div>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+    <div class="col"></div>
+  </div>
+<% end %>
 <div class="text-center"> <!-- break line -->
   <p>⸺⸺⸺⸺⸺⸺⸺⸺⸺⸺⸺</p>
 </div>
