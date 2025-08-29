@@ -73,8 +73,8 @@
     <% @location.reviews.each do |review| %>
       <div class="review-content-box-user ms-2 mt-2 rounded-5 shadow">
         <p class="ms-3 mt-1 review-text-color-bold"><%= review.user.name %></p>
-        <p class="ms-3 review-text-color">- <%= review.body %></p>
-        <p class="ms-3 star-rating-set">
+        <p class="ms-3 me-3 review-text-color">- <%= review.body %></p>
+        <p class="ms-3 star-rating">
           <% review.rating.times do %>
             <i class="fas fa-star"></i>
           <% end %>
@@ -131,8 +131,8 @@
 </div>
 <p class="location-map ms-3">Location: </p>
 <!-- map display here -->
-<div class="image-map d-flex align-items-center justify-content-center">
-  <p>map here</p>
+<div class="image-map mb-5 d-flex align-items-center justify-content-center">
+  <%= image_tag "map_pic", alt: "map", width: 500, height: 250, class: "rounded-5" %>
 </div>
 <%# spacing so the map doesn't get covered by bottom nav bar %>
 <div class="nav-bar-spacing"></div>
