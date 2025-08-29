@@ -43,6 +43,13 @@
 <div class="text-center"> <!-- break line -->
   <p>⸺⸺⸺⸺⸺⸺⸺⸺⸺⸺⸺</p>
 </div>
+
+ <%= link_to favorite_location_path(@location), data: {turbo_method: :post, turbo_confirm: "Add #{@location.name} to favorites?" }, class: "text-center text-decoration-none text-white" do %>
+    <div class="d-flex align-items-center justify-content-center">
+      <i class="bi bi-heart-fill btn btn-info rounded-5"></i>
+    </div>
+    <% end %>
+
 <h3 class="ms-3 mt-3 mb-0 fw-bold">Reviews:</h3>
 <div class="review-content-box d-flex align-items-center justify-content-center rounded-5 shadow">
   <!-- review display here -->

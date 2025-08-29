@@ -45,6 +45,12 @@ class LocationsController < ApplicationController
   def destroy
   end
 
+  def favorite
+    @location = Location.find(params[:id])
+    current_user.favorite(@location)
+    redirect_back(fallback_location: location_path(@location))
+  end
+
   private
 
   def location_params

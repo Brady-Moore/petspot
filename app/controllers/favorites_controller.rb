@@ -4,9 +4,6 @@ class FavoritesController < ApplicationController
     @favorites = current_user.favorited_by_type("Location") || []
   end
 
-  def create
-  end
-
   def destroy
     @location = Location.find(params[:id])
     current_user.unfavorite(@location)
