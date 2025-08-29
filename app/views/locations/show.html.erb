@@ -43,6 +43,13 @@
 <div class="text-center"> <!-- break line -->
   <p>⸺⸺⸺⸺⸺⸺⸺⸺⸺⸺⸺</p>
 </div>
+
+ <%= link_to favorite_location_path(@location), data: {turbo_method: :post, turbo_confirm: "Add #{@location.name} to favorites?" }, class: "text-center text-decoration-none text-white" do %>
+    <div class="d-flex align-items-center justify-content-center">
+      <i class="bi bi-heart-fill btn btn-info rounded-5"></i>
+    </div>
+    <% end %>
+
 <h3 class="ms-3 mt-3 mb-0 fw-bold">Reviews:</h3>
 <div class="review-content-box d-flex align-items-center justify-content-center rounded-5 shadow">
   <!-- review display here -->
@@ -78,9 +85,9 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="bg-info container rounded-5 shadow mt-5 card block">
+        <div class="bg-info container rounded-5 shadow card block">
           <h1 class="mt-3 fw-bold review-title">Leave a review for <%= @location.name %></h1>
-          <div class="container review-content">
+          <div class="review-content">
             <%= simple_form_for [@location, @review] do |f| %>
               <%= f.input :body, label: "What did you think of #{@location.name}?" %>
               <%= f.input :rating, as: :radio_buttons, collection: 1..5, label: "Rating", item_wrapper_class: 'd-inline-block star-rating p-1' %>
@@ -96,7 +103,15 @@
   <p>⸺⸺⸺⸺⸺⸺⸺⸺⸺⸺⸺</p>
 </div>
 <p class="location-map ms-3">Location: </p>
+
+
 <!-- map display here -->
 <div class="image-map d-flex align-items-center justify-content-center">
   <p>map here</p>
 </div>
+
+<%# spacing so the map doesn't get covered by bottom nav bar %>
+<div class="nav-bar-spacing"></div>
+<div class="nav-bar-spacing"></div>
+
+
