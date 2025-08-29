@@ -27,29 +27,30 @@
 <p class="ps-3 location-address">● <%= @location.category %></p>
 <p class="ps-3 mb-0 location-address"><%= @location.address %></p>
 <p class="ps-3 location-address">〒<%= @location.postal_code %></p>
-<p class="amenity-title ms-3">Amenities:</p>
-<div class="d-flex justify-content-center gap-4 flex-wrap">
-  <% @location.amenities.each do |amenity| %>
-    <div class="amenity text-center">
-      <div class="amenity-icon rounded-circle d-flex align-items-center justify-content-center mx-auto">
-        <i class="<%= amenity.icon_class %>"></i>
+<% @location.amenities.each_slice(4) do |group| %>
+  <div class="d-flex justify-content-center gap-4 flex-wrap">
+    <div class="col"></div>
+    <% group.each do |amenity| %>
+      <div style="" class="amenity text-center col">
+        <div class="amenity-icon rounded-circle d-flex align-items-center justify-content-center mx-auto">
+          <i class="<%= amenity.icon_class %>"></i>
+        </div>
+        <div class=" amenity-label mt-2 justify-content-center">
+          <%= amenity.key.humanize %>
+        </div>
       </div>
-      <div class=" amenity-label mt-2 justify-content-center">
-        <%= amenity.label %>
-      </div>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+    <div class="col"></div>
+  </div>
+<% end %>
 <div class="text-center"> <!-- break line -->
   <p>⸺⸺⸺⸺⸺⸺⸺⸺⸺⸺⸺</p>
 </div>
-
- <%= link_to favorite_location_path(@location), data: {turbo_method: :post, turbo_confirm: "Add #{@location.name} to favorites?" }, class: "text-center text-decoration-none text-white" do %>
-    <div class="d-flex align-items-center justify-content-center">
-      <i class="bi bi-heart-fill btn btn-info rounded-5"></i>
-    </div>
-    <% end %>
-
+<%= link_to favorite_location_path(@location), data: {turbo_method: :post, turbo_confirm: "Add #{@location.name} to favorites?" }, class: "text-center text-decoration-none text-white" do %>
+  <div class="d-flex align-items-center justify-content-center">
+    <i class="bi bi-heart-fill btn btn-info rounded-5"></i>
+  </div>
+<% end %>
 <h3 class="ms-3 mt-3 mb-0 fw-bold">Reviews:</h3>
 <div class="review-content-box d-flex align-items-center justify-content-center rounded-5 shadow">
   <!-- review display here -->
@@ -103,15 +104,10 @@
   <p>⸺⸺⸺⸺⸺⸺⸺⸺⸺⸺⸺</p>
 </div>
 <p class="location-map ms-3">Location: </p>
-
-
 <!-- map display here -->
 <div class="image-map d-flex align-items-center justify-content-center">
   <p>map here</p>
 </div>
-
 <%# spacing so the map doesn't get covered by bottom nav bar %>
 <div class="nav-bar-spacing"></div>
 <div class="nav-bar-spacing"></div>
-
-
