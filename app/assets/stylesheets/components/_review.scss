@@ -1,20 +1,12 @@
-.star-rating label {
-  font-size: 18px;
-  cursor: pointer;
+.star-rating {
+  color: #41a0ff;
 }
 
-.star-rating input[type="radio"] {
-  display: none;
+.star-rating-put {
+  color: #41a0ff;
+  font-size: 16px;
 }
 
-.star-rating label::before {
-  content: "★";
-  color: #606060;
-}
-
-.star-rating input[type="radio"]:checked ~ label::before {
-  color: #61A8FF;
-}
 
 .review-title {
   font-size: 16px;
@@ -34,4 +26,17 @@
   background-color: #ffe097;
   height: auto;
   margin: 20px;
+}
+
+.review-text-color {
+  color: $text-color;
+}
+
+.review-text-color-bold {
+  color: $text-color;
+  font-weight: bold;
+}
+
+.thin-text {
+  font-weight: 500;
 }
