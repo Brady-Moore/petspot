@@ -51,6 +51,12 @@ class LocationsController < ApplicationController
     redirect_back(fallback_location: location_path(@location))
   end
 
+  def unfavorite
+    @location = Location.find(params[:id])
+    current_user.unfavorite(@location)
+    redirect_back(fallback_location: @location)
+  end
+
   private
 
   def location_params
