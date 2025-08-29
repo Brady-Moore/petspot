@@ -26,7 +26,7 @@
 
 <div class="d-flex ms-3 mt-3 mb-0 fw-bold sp">
   <h2><%= @location.name %></h2>
-    <% if current_user.favorited?(@location) %>
+    <% if current_user&.favorited?(@location) %>
       <%= link_to unfavorite_location_path(@location), data: {turbo_method: :delete, turbo_confirm: "Remove #{@location.name} from favorites?"}, class: "text-center text-decoration-none text-white" do %>
         <div class="ms-3 mt-1">
           <i class="bi bi-heart-fill red-heart"></i>
@@ -73,13 +73,13 @@
     <% @location.reviews.each do |review| %>
       <div class="review-content-box-user ms-2 mt-2 rounded-5 shadow">
         <p class="ms-3 mt-1 review-text-color-bold"><%= review.user.name %></p>
-        <p class="ms-3 me-3 review-text-color">- <%= review.body %></p>
-        <p class="ms-3 star-rating">
+        <p class="ms-3 review-text-color">- <%= review.body %></p>
+        <p class="ms-3 star-rating-set">
           <% review.rating.times do %>
-            ★
+            <i class="fas fa-star"></i>
           <% end %>
           <% (5 - review.rating).times do %>
-            ☆
+            <i class="far fa-star"></i>
           <% end %>
         </p>
       </div>
@@ -113,7 +113,11 @@
           <div class="review-content">
             <%= simple_form_for [@location, @review] do |f| %>
               <%= f.input :body, label: "What did you think of #{@location.name}?" %>
-              <%= f.input :rating, as: :radio_buttons, collection: 1..5, label: "Rating", item_wrapper_class: 'd-inline-block star-rating-put p-1' %>
+              <div class="star-rating">
+                <% 5.times do |i| %>
+                  <input type="radio" name="review[rating]" value="<%= i + 1 %>" <%= "checked" if i == 2 %> />
+                <% end %>
+              </div>
               <%= f.button :submit , class: 'btn btn-button rounded-5 mt-3 mb-3 review-text-color-bold' %>
             <% end %>
           </div>

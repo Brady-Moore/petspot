@@ -14,4 +14,10 @@ class Location < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
+
+  def avg_rating
+  return 'No reviews' if reviews.empty?
+
+  reviews.pluck(:rating).sum.fdiv(reviews.length).round
+  end
 end
