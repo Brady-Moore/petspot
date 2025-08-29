@@ -34,6 +34,8 @@
 <p class="ps-3 location-address">● <%= @location.category %></p>
 <p class="ps-3 mb-0 location-address"><%= @location.address %></p>
 <p class="ps-3 location-address">〒<%= @location.postal_code %></p>
+<p class="amenity-title ms-3">Amenities:</p>
+
 <% @location.amenities.each_slice(4) do |group| %>
   <div class="d-flex justify-content-center gap-4 flex-wrap">
     <div class="col"></div>
@@ -60,9 +62,9 @@
   <div class="ms-3 mt-2">
     <% @location.reviews.each do |review| %>
       <div class="review-content-box-user ms-2 mt-2 rounded-5 shadow">
-        <p class="ms-3"><%= review.user.name %></p>
-        <p class="ms-3">- <%= review.body %></p>
-        <p class="ms-3">
+        <p class="ms-3 mt-1 review-text-color-bold"><%= review.user.name %></p>
+        <p class="ms-3 review-text-color">- <%= review.body %></p>
+        <p class="ms-3 star-rating">
           <% review.rating.times do %>
             ★
           <% end %>
@@ -76,9 +78,16 @@
 </div>
 <!-- Button trigger modal -->
 <div class="ms-3 mt-3">
-  <button type="button" class="btn btn-info rounded-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Leave a review
-  </button>
+  <% if user_signed_in? %>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-button rounded-5" review-text-color-bold" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Leave a review
+    </button>
+  <% else %>
+    <%= link_to "Leave a review", new_user_session_path,
+          class: "btn btn-info rounded-5",
+          data: { turbo: false } %>
+  <% end %>
 </div>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -89,13 +98,13 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="bg-info container rounded-5 shadow card block">
+        <div class="bg-review container rounded-5 shadow card block">
           <h1 class="mt-3 fw-bold review-title">Leave a review for <%= @location.name %></h1>
           <div class="review-content">
             <%= simple_form_for [@location, @review] do |f| %>
               <%= f.input :body, label: "What did you think of #{@location.name}?" %>
-              <%= f.input :rating, as: :radio_buttons, collection: 1..5, label: "Rating", item_wrapper_class: 'd-inline-block star-rating p-1' %>
-              <%= f.button :submit , class: 'btn btn-secondary rounded-5 mt-3 mb-3' %>
+              <%= f.input :rating, as: :radio_buttons, collection: 1..5, label: "Rating", item_wrapper_class: 'd-inline-block star-rating-put p-1' %>
+              <%= f.button :submit , class: 'btn btn-button rounded-5 mt-3 mb-3 review-text-color-bold' %>
             <% end %>
           </div>
         </div>
