@@ -2,18 +2,10 @@ class LocationsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index ]
 
   def index
-    @locations = Location.includes(:amenities)
-    @locations = @locations.search(params[:search]) if params[:search].present?
-
-    if params[:amenities].present?
-      selected_amenities = params[:amenities]
-      # Do not touch
-      @locations = @locations.where(
-        id: Location.joins(:amenities)
-        .where(amenities: {key: selected_amenities })
-        .group("locations.id")
-        .having("COUNT(DISTINCT amenities.id) = ?", selected_amenities.size)
-      )
+    if params[:query].present?
+      @locations = Location.search(params[:query])
+    else
+      @locations = Location.all
     end
   end
 

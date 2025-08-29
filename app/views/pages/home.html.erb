@@ -18,58 +18,65 @@
       <i class="fa-solid fa-magnifying-glass"></i>
     </button>
   </div>
-  <%# Filter %>
-  <div class="container-md m-3 rounded-3 mx-auto border filters" >
-    <div class="container">
-      <div class="row">
-        <div class="col-6 d-flex flex-column">
-          <% @groups[2].each do |amenity| %>
-            <label for="<%= amenity.key%>">
+<%end%>
+<%# Filter %>
+<div class="container-md m-3 rounded-3 mx-auto border filters" >
+  <div class="container">
+    <div class="row">
+      <div class="col-6 d-flex flex-column">
+        <label for="SDogs">
+          <i class="fa-solid fa-paw"></i>
+          <span>Small Dogs</span>
+          <input type="checkbox" class="checkbox" id="SDogs">
+        </label>
+        <label for="LDogs">
+          <i class="fa-solid fa-paw"></i>
+          <span>Large Dogs</span>
+          <input type="checkbox" class="checkbox" id="LDogs">
+        </label>
+      </div>
+      <div class="col-6 d-flex flex-column">
+        <label for="Indoor">
+          <i class="fa-solid fa-paw"></i>
+          <span>Indoor</span>
+          <input type="checkbox" class="checkbox" id="Indoor">
+        </label>
+        <label for="Parks">
+          <i class="fa-solid fa-paw"></i>
+          <span>Parks</span>
+          <input type="checkbox" class="checkbox" id="Parks">
+        </label>
+      </div>
+      <%# more %>
+      <i class="fa-regular fa-plus" onclick="this.remove()" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"></i>
+      <div class="collapse" id="collapseExample">
+        <div class="row">
+          <div class="col-6 d-flex flex-column">
+            <label for="Shade">
               <i class="fa-solid fa-paw"></i>
-              <span><%= amenity.label%></span>
-              <input type="checkbox" name="amenities[]" class="checkbox" id="<%= amenity.key%>" value="<%= amenity.key%>">
+              <span>Shade</span>
+              <input type="checkbox" class="checkbox" id="Shade">
             </label>
-          <% end %>
-        </div>
-        <div class="col-6 d-flex flex-column">
-          <% @groups[1].each do |amenity| %>
-            <label for="<%= amenity.key%>">
+            <label for="Off leash area">
               <i class="fa-solid fa-paw"></i>
-              <span><%= amenity.label%></span>
-              <input type="checkbox" name="amenities[]"class="checkbox" id="<%= amenity.key%>" value="<%= amenity.key%>">
+              <span>Off leash area</span>
+              <input type="checkbox" class="checkbox" id="Off leash area">
             </label>
-          <% end %>
-        </div>
-        <%# more %>
-        <i class="fa-regular fa-plus"
-    onclick="this.remove()"
-    data-bs-toggle="collapse"
-    data-bs-target="#collapseExample"
-    aria-expanded="false"
-    aria-controls="collapseExample"></i>
-        <div class="collapse" id="collapseExample">
-          <div class="row">
-            <div class="col-6 d-flex flex-column">
-              <% @groups[0].each do |amenity| %>
-                <label for="<%= amenity.key%>">
-                  <i class="fa-solid fa-paw"></i>
-                  <span><%= amenity.label%></span>
-                  <input type="checkbox" name="amenities[]" class="checkbox" id="<%= amenity.key%>" value="<%= amenity.key%>">
-                </label>
-              <% end %>
-            </div>
-            <div class="col-6 d-flex flex-column">
-              <% @groups[3].each do |amenity| %>
-                <label for="<%= amenity.key%>">
-                  <i class="fa-solid fa-paw"></i>
-                  <span><%= amenity.label%></span>
-                  <input type="checkbox" name="amenities[]"class="checkbox" id="<%= amenity.key%>" value="<%= amenity.key%>">
-                </label>
-              <% end %>
-            </div>
+          </div>
+          <div class="col-6 d-flex flex-column">
+            <label for="Dog menu">
+              <i class="fa-solid fa-paw"></i>
+              <span>Dog menu</span>
+              <input type="checkbox" class="checkbox" id="Dog menu">
+            </label>
+            <label for="Leash require">
+              <i class="fa-solid fa-paw"></i>
+              <span>Leash required</span>
+              <input type="checkbox" class="checkbox" id="Leash require">
+            </label>
           </div>
         </div>
-      <% end %>
+      </div>
     </div>
   </div>
-  </div>
+</div>
