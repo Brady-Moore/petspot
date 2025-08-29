@@ -43,13 +43,11 @@
 <div class="text-center"> <!-- break line -->
   <p>⸺⸺⸺⸺⸺⸺⸺⸺⸺⸺⸺</p>
 </div>
-
- <%= link_to favorite_location_path(@location), data: {turbo_method: :post, turbo_confirm: "Add #{@location.name} to favorites?" }, class: "text-center text-decoration-none text-white" do %>
-    <div class="d-flex align-items-center justify-content-center">
-      <i class="bi bi-heart-fill btn btn-info rounded-5"></i>
-    </div>
-    <% end %>
-
+<%= link_to favorite_location_path(@location), data: {turbo_method: :post, turbo_confirm: "Add #{@location.name} to favorites?" }, class: "text-center text-decoration-none text-white" do %>
+  <div class="d-flex align-items-center justify-content-center">
+    <i class="bi bi-heart-fill btn btn-info rounded-5"></i>
+  </div>
+<% end %>
 <h3 class="ms-3 mt-3 mb-0 fw-bold">Reviews:</h3>
 <div class="review-content-box d-flex align-items-center justify-content-center rounded-5 shadow">
   <!-- review display here -->
@@ -72,9 +70,16 @@
 </div>
 <!-- Button trigger modal -->
 <div class="ms-3 mt-3">
-  <button type="button" class="btn btn-info rounded-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Leave a review
-  </button>
+  <% if user_signed_in? %>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-info rounded-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Leave a review
+    </button>
+  <% else %>
+    <%= link_to "Leave a review", new_user_session_path,
+          class: "btn btn-info rounded-5",
+          data: { turbo: false } %>
+  <% end %>
 </div>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -103,15 +108,10 @@
   <p>⸺⸺⸺⸺⸺⸺⸺⸺⸺⸺⸺</p>
 </div>
 <p class="location-map ms-3">Location: </p>
-
-
 <!-- map display here -->
 <div class="image-map d-flex align-items-center justify-content-center">
   <p>map here</p>
 </div>
-
 <%# spacing so the map doesn't get covered by bottom nav bar %>
 <div class="nav-bar-spacing"></div>
 <div class="nav-bar-spacing"></div>
-
-
