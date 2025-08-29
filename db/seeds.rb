@@ -158,7 +158,36 @@ pet_friendly_shop = Location.create!(
   source: "seed"
 )
 
+test_location = Location.create!(
+    owner: alice,
+  name: "Test Location",
+  category: "Test",
+  address: "1-2-3- Meguro, Shibuya City, Tokyo",
+  city: "Tokyo",
+  prefecture: "Tokyo",
+  postal_code: "123-1234",
+  lat: 30,
+  lng: 130,
+  website: "https://testdog.example.com",
+  phone: "080-9999-9999",
+  source: "seed"
+)
+
 puts "Assigning amenities..."
+
+LocationAmenity.create!(location: test_location, amenity: Amenity.find_by!(key: "water"))
+LocationAmenity.create!(location: test_location, amenity: Amenity.find_by!(key: "trash"))
+LocationAmenity.create!(location: test_location, amenity: Amenity.find_by!(key: "shades"))
+LocationAmenity.create!(location: test_location, amenity: Amenity.find_by!(key: "indoor"))
+LocationAmenity.create!(location: test_location, amenity: Amenity.find_by!(key: "dog_run"))
+LocationAmenity.create!(location: test_location, amenity: Amenity.find_by!(key: "menu"))
+LocationAmenity.create!(location: test_location, amenity: Amenity.find_by!(key: "leash_station"))
+LocationAmenity.create!(location: test_location, amenity: Amenity.find_by!(key: "beds"))
+LocationAmenity.create!(location: test_location, amenity: Amenity.find_by!(key: "warm"))
+LocationAmenity.create!(location: test_location, amenity: Amenity.find_by!(key: "cool"))
+LocationAmenity.create!(location: test_location, amenity: Amenity.find_by!(key: "showers"))
+LocationAmenity.create!(location: test_location, amenity: Amenity.find_by!(key: "strollers"))
+LocationAmenity.create!(location: test_location, amenity: Amenity.find_by!(key: "photos"))
 
 LocationAmenity.create!(location: park, amenity: Amenity.find_by!(key: "water"))
 LocationAmenity.create!(location: park, amenity: Amenity.find_by!(key: "dog_run"))
