@@ -42,6 +42,8 @@ $danger: $red;
 $warning: $orange;
 $light: $light-gray;
 $dark: #1e293b; // rich dark for text/icons
+$review: $light-yellow;
+$button: $button-blue;
 
 // Make utilities (bg-*, text-*) aware of our palette
 $theme-colors: (
@@ -53,6 +55,8 @@ $theme-colors: (
   "danger": $danger,
   "light": $light,
   "dark": $dark,
+  "review": $review,
+  "button": $button,
 );
 
 // Buttons: ensure readable text on yellow
