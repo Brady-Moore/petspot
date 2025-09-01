@@ -13,8 +13,15 @@
             <% end %>
             <!-- Clickable content (image + text only) -->
             <%= link_to location_path(fav), class: "d-block text-decoration-none text-dark" do %>
-              <%# TODO: Use Cloudinary Image %>
-              <img src="no_img.png" />
+              <% if fav.photos.attached? %>
+                <%= cl_image_tag fav.photos.first.key,
+                     class: "card-img-top",
+                     alt: fav.name %>
+              <% else %>
+                <%= image_tag "no_img.png",
+                  class: "card-img-top",
+                  alt: "No image available" %>
+              <% end %>
               <div class="card-trip-infos">
                 <div>
                   <h2><%= fav.name %></h2>
