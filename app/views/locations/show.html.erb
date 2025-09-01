@@ -63,6 +63,8 @@
   <p>⸺⸺⸺⸺⸺⸺⸺⸺⸺⸺⸺</p>
 </div>
 <h3 class="ms-3 mt-3 mb-0 fw-bold">Reviews:</h3>
+
+<% if @location.reviews.any? %>
 <div class="review-content-box d-flex align-items-center justify-content-center rounded-5 shadow">
   <!-- review display here -->
   <div class="ms-3 mt-2">
@@ -82,6 +84,9 @@
     <% end %>
   </div>
 </div>
+<% else %>
+  <p class="ms-3">No reviews for <%= @location.name %> yet :(</p>
+<% end %>
 <!-- Button trigger modal -->
 <div class="ms-3 mt-3">
   <% if user_signed_in? && !@location.users.include?(current_user) && @location.owner != current_user %>
