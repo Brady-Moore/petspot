@@ -1,20 +1,21 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2 class="mb-3">Edit <%= resource_name.to_s.humanize %></h2>
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
   <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
+    <%= f.input :name, required: true, autofocus: true, input_html: { autocomplete: "name" } %>
+    <%= f.input :email, required: true, input_html: { autocomplete: "email" } %>
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+      <p class="text-muted small">Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
     <%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
+                hint: "Leave blank to keep your current password",
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :password_confirmation,
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
+                hint: "Enter your current password to confirm changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
   </div>
@@ -22,9 +23,14 @@
     <%= f.button :submit, "Update", class: "btn btn-button review-text-color-bold rounded-5 my-3" %>
   </div>
 <% end %>
-<div class="my-3">Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class:"btn border border-button btn-sm my-3 star-rating" %>
-</div>
 <div class="my-3">
+  <%= button_to "Cancel my account",
+        registration_path(resource_name),
+        method: :delete,
+        data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" },
+        class: "btn border border-button btn-sm my-3 star-rating" %>
+</div>
+<div class="my-3 d-flex gap-2">
   <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete }, class: "btn btn-sm border border-gray" %>
   <%= render "shared/navbar" unless devise_controller? %>
 </div>
