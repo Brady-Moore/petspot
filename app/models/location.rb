@@ -7,6 +7,7 @@ class Location < ApplicationRecord
   has_many :location_amenities
   has_many :amenities, through: :location_amenities
   has_many_attached :photos
+  has_many :users, through: :reviews
 
   include PgSearch::Model
   pg_search_scope :search,

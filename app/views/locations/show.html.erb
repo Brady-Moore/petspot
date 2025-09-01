@@ -69,27 +69,29 @@
     <% @location.reviews.each do |review| %>
       <div class="review-content-box-user ms-2 mt-2 rounded-5 shadow">
         <p class="ms-3 mt-1 review-text-color-bold"><%= review.user.name %></p>
-        <p class="ms-3 me-3 review-text-color">- <%= review.body %></p>
-        <p class="ms-3 star-rating">
-          <% review.rating.times do %>
-            ★
-          <% end %>
-          <% (5 - review.rating).times do %>
-            ☆
-          <% end %>
-        </p>
+        <p class="ms-3 review-text-color">- <%= review.body %></p>
+        <% if review.rating.present? %>
+          <p class="ms-3 star-rating">
+            <% review.rating.times do %>
+              ★
+            <% end %>
+            <% (5 - review.rating).times do %>
+              ☆
+            <% end %>
+          </p>
+        <% end %>
       </div>
     <% end %>
   </div>
 </div>
 <!-- Button trigger modal -->
 <div class="ms-3 mt-3">
-  <% if user_signed_in? %>
+  <% if user_signed_in? && !@location.users.include?(current_user) && @location.owner != current_user %>
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-button rounded-5" review-text-color-bold" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <button type="button" class="btn btn-button rounded-5 review-text-color-bold" data-bs-toggle="modal" data-bs-target="#exampleModal">
       Leave a review
     </button>
-  <% else %>
+  <% elsif !user_signed_in? %>
     <%= link_to "Leave a review", new_user_session_path,
           class: "btn btn-info rounded-5",
           data: { turbo: false } %>
