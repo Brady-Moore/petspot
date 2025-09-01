@@ -72,7 +72,7 @@
           <p class="ms-3 mt-1 review-text-color-bold"><%= review.user.name %> :</p>
           <p class="ms-3 review-text-color">- <%= review.body %></p>
           <% if review.rating.present? %>
-            <p class="ms-3 star-rating">
+            <p class="ms-3 star-rating-put">
               <% review.rating.times do %>
                 <i class="fas fa-star"></i>
               <% end %>
