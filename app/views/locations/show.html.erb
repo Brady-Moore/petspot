@@ -123,10 +123,18 @@
 <div class="text-center"> <!-- break line -->
   <p>⸺⸺⸺⸺⸺⸺⸺⸺⸺⸺⸺</p>
 </div>
-<p class="location-map ms-3">Location: </p>
+<p class="location-map ms-3">Map View: </p>
 <!-- map display here -->
-<div class="image-map mb-5 d-flex align-items-center justify-content-center">
-  <%= image_tag "map_pic.png", alt: "map", width: 500, height: 250, class: "rounded-5" %>
+<div class="container">
+  <div id="location-map"
+       class="rounded-5 mb-5 w-100 mx-auto"
+       style="height: 300px; max-width: 600px;"
+       data-controller="mapbox"
+       data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+       data-mapbox-lat-value="<%= @location.lat %>"
+       data-mapbox-lng-value="<%= @location.lng %>"
+       data-mapbox-name-value="<%= @location.name %>">
+  </div>
 </div>
 <%# spacing so the map doesn't get covered by bottom nav bar %>
 <div class="nav-bar-spacing"></div>

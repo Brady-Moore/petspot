@@ -8,6 +8,8 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <%= stylesheet_link_tag "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css", media: "all" %>
+    <%= stylesheet_link_tag "https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css", media: "all" %>
+    <%= javascript_include_tag "https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js", defer: true %>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
     <link rel="manifest" href="<%= asset_path 'manifest.json' %>">
