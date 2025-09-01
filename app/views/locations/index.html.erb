@@ -1,33 +1,32 @@
 <div class="container my-3">
-<%# <%= @locations.count%>
-<%if @locations.any? %>
-   <h1>Your Search Results:</h1>
+  <%# <%= @locations.count%>
+  <%if @locations.any? %>
+    <h1>Your Search Results:</h1>
     <p class="locations-found">
-    <%= @locations.length %> locations found
+      <%= @locations.length %> locations found
     </p>
-  <div class="cards">
-    <% @locations.each do |location| %>
-      <div class="card-trip my-3">
-        <% if location.photos.attached? %>
-          <%= cl_image_tag location.photos.first.key %>
-        <% else %>
-          <%= image_tag "daniel-brunsteiner-_jd5ryWK5J4-unsplash.jpg" %>
-        <% end %>
-        <div class="card-trip-infos">
-          <div>
-            <h2><%= location.name %></h2>
-            <p><%= location.category %></p>
+    <div class="cards">
+      <% @locations.each do |location| %>
+        <div class="card-trip my-3">
+          <% if location.photos.attached? %>
+            <%= cl_image_tag location.photos.first.key %>
+          <% else %>
+            <%= image_tag "no_img.png" %>
+          <% end %>
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= location.name %></h2>
+              <p><%= location.category %></p>
+            </div>
           </div>
+          <%= link_to "", location_path(location), class: "card-trip-link" %>
         </div>
-        <%= link_to "", location_path(location), class: "card-trip-link" %>
-      </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
   <% else %>
     <h1>Your Search Results:</h1>
     <p class="locations-found">
-    <%= @locations.length %> locations found &#58;&#40;
+      <%= @locations.length %> locations found &#58;&#40;
     </p>
-
   <% end %>
 </div>
