@@ -67,8 +67,8 @@
   <!-- review display here -->
   <div class="ms-3 mt-2">
     <% @location.reviews.each do |review| %>
-      <div class="review-content-box-user ms-2 mt-2 rounded-5 shadow">
-        <p class="ms-3 mt-1 review-text-color-bold"><%= review.user.name %></p>
+      <div class="review-content-box-user ms-2 mt-2 rounded-5 shadow p-2 pe-3">
+        <p class="ms-3 mt-1 review-text-color-bold"><%= review.user.name %> :</p>
         <p class="ms-3 review-text-color">- <%= review.body %></p>
         <p class="ms-3 star-rating-set">
           <% review.rating.times do %>
