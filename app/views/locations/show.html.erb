@@ -23,9 +23,9 @@
     </button>
   <% end %>
 </div>
-
 <div class="d-flex ms-3 mt-3 mb-0 fw-bold sp">
   <h2><%= @location.name %></h2>
+<<<<<<< HEAD
     <% if current_user&.favorited?(@location) %>
       <%= link_to unfavorite_location_path(@location), data: {turbo_method: :delete, turbo_confirm: "Remove #{@location.name} from favorites?"}, class: "text-center text-decoration-none text-white" do %>
         <div class="ms-3 mt-1">
@@ -38,14 +38,26 @@
           <i class="bi bi-heart-fill gray-heart"></i>
         </div>
       <% end %>
+=======
+  <% if current_user&.favorited?(@location) %>
+    <%= link_to unfavorite_location_path(@location), data: {turbo_method: :delete, turbo_confirm: "Remove #{@location.name} from favorites?"}, class: "text-center text-decoration-none text-white" do %>
+      <div class="ms-3 mt-1">
+        <i class="bi bi-heart-fill red-heart"></i>
+      </div>
+>>>>>>> master
     <% end %>
+  <% else %>
+    <%= link_to favorite_location_path(@location), data: {turbo_method: :post, turbo_confirm: "Add #{@location.name} to favorites?" }, class: "text-center text-decoration-none text-white" do %>
+      <div class="ms-3 mt-1">
+        <i class="bi bi-heart-fill gray-heart"></i>
+      </div>
+    <% end %>
+  <% end %>
 </div>
-
 <p class="ps-3 location-address">● <%= @location.category %></p>
 <p class="ps-3 mb-0 location-address"><%= @location.address %></p>
 <p class="ps-3 location-address">〒<%= @location.postal_code %></p>
 <p class="amenity-title ms-3">Amenities:</p>
-
 <% @location.amenities.each_slice(4) do |group| %>
   <div class="d-flex justify-content-center gap-4 flex-wrap">
     <div class="col"></div>
@@ -65,7 +77,6 @@
 <div class="text-center"> <!-- break line -->
   <p>⸺⸺⸺⸺⸺⸺⸺⸺⸺⸺⸺</p>
 </div>
-
 <h3 class="ms-3 mt-3 mb-0 fw-bold">Reviews:</h3>
 <div class="review-content-box d-flex align-items-center justify-content-center rounded-5 shadow">
   <!-- review display here -->
@@ -88,12 +99,12 @@
 </div>
 <!-- Button trigger modal -->
 <div class="ms-3 mt-3">
-  <% if user_signed_in? %>
+  <% if user_signed_in? && !@location.users.include?(current_user) && @location.owner != current_user %>
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-button rounded-5" review-text-color-bold" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <button type="button" class="btn btn-button rounded-5 review-text-color-bold" data-bs-toggle="modal" data-bs-target="#exampleModal">
       Leave a review
     </button>
-  <% else %>
+  <% elsif !user_signed_in? %>
     <%= link_to "Leave a review", new_user_session_path,
           class: "btn btn-info rounded-5",
           data: { turbo: false } %>
@@ -132,7 +143,7 @@
 <p class="location-map ms-3">Location: </p>
 <!-- map display here -->
 <div class="image-map mb-5 d-flex align-items-center justify-content-center">
-  <%= image_tag "map_pic", alt: "map", width: 500, height: 250, class: "rounded-5" %>
+  <%= image_tag "map_pic.png", alt: "map", width: 500, height: 250, class: "rounded-5" %>
 </div>
 <%# spacing so the map doesn't get covered by bottom nav bar %>
 <div class="nav-bar-spacing"></div>
