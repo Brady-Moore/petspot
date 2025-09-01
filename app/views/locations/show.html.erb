@@ -110,8 +110,9 @@
             <%= simple_form_for [@location, @review] do |f| %>
               <%= f.input :body, label: "What did you think of #{@location.name}?" %>
               <div class="star-rating">
-                <% 5.times do |i| %>
-                  <input type="radio" name="review[rating]" value="<%= i + 1 %>" <%= "checked" if i == 2 %> />
+                <% 5.downto(1) do |i| %>
+                  <input type="radio" id="star-<%= i + 1 %>" name="review[rating]" value="<%= i %>" <%= "checked" if i == 2 %> />
+                  <label for="star-<%= i + 1 %>"></label>
                 <% end %>
               </div>
               <%= f.button :submit , class: 'btn btn-button rounded-5 mt-3 mb-3 review-text-color-bold' %>

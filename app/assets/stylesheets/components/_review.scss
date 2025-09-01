@@ -1,28 +1,62 @@
+// .star-rating {
+//   input {
+//     visibility: hidden;
+//     margin-right: 1em;
+//     font-size: 20px;
+//     text-shadow: 0.5px 0.5px 3px #E67E23;
+//   }
+
+//   input:before {
+//     cursor: pointer;
+//     visibility: visible;
+//     font-family: 'Font Awesome 6 Free', 'Font Awesome 5 Free';
+//     content: '\f005';
+//     font-weight: 900;
+//     color:#41a0ff;
+//     transition: color 0.35s;
+//   }
+
+//   input:hover {
+//     transform: scale(1.2) translate(-10%, -10%);
+//   }
+
+//   input:checked ~ input:before {
+//     color: #8a8a8a;
+//   }
+// }
+
+// gpt code
 .star-rating {
-  input {
-    visibility: hidden;
-    margin-right: 1em;
-    font-size: 20px;
-    text-shadow: 0.5px 0.5px 3px #E67E23;
-  }
+  display: flex;
+  flex-direction: row-reverse; /* optional, makes stars fill from left to right */
+  justify-content: flex-start;
+}
 
-  input:before {
-    cursor: pointer;
-    visibility: visible;
-    font-family: 'Font Awesome 6 Free', 'Font Awesome 5 Free';
-    content: '\f005';
-    font-weight: 900;
-    color:#41a0ff;
-    transition: color 0.35s;
-  }
+.star-rating input {
+  display: none; /* fully hide radios */
+}
 
-  input:hover {
-    transform: scale(1.2) translate(-10%, -10%);
-  }
+.star-rating label {
+  font-family: 'Font Awesome 6 Free', 'Font Awesome 5 Free';
+  font-weight: 900;
+  font-size: 24px;
+  color: #8a8a8a; /* default gray */
+  cursor: pointer;
+  transition: transform 0.25s, color 0.25s;
+}
 
-  input:checked ~ input:before {
-    color: #8a8a8a;
-  }
+.star-rating label::before {
+  content: "\f005"; /* solid star */
+}
+
+.star-rating input:checked ~ label::before,
+.star-rating label:hover::before,
+.star-rating label:hover ~ label::before {
+  color: #41a0ff; /* highlight blue */
+}
+
+.star-rating label:hover {
+  transform: scale(1.2);
 }
 
 .star-rating-set {
