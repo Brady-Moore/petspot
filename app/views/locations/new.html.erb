@@ -1,15 +1,4 @@
 <div class="container mt-3 mb-5">
   <h1>Add New Location</h1>
-  <%= simple_form_for @location do |f| %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-    <%= f.input :name %>
-    <%= f.input :category, collection: Location::CATEGORIES, include_blank: false %>
-    <%= f.input :address %>
-    <%= f.input :city %>
-    <%= f.input :prefecture %>
-    <%= f.input :postal_code %>
-    <%= f.input :website %>
-    <%= f.input :phone %>
-    <%= f.submit "Create Location", class: "btn btn-button mb-5 rounded-5 review-text-color-bold" %>
-  <% end %>
+  <%= render "locations/form", location: @location %>
 </div>
