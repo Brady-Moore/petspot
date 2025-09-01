@@ -22,7 +22,7 @@
   height: 52px;
   padding-left: 18px;
   &::placeholder {
-    color: #fff;
+    color: $secondary;
     opacity: 0.95;
     font-weight: 800;
   }
