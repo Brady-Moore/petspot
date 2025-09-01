@@ -8,11 +8,15 @@
     <div class="cards">
       <% @locations.each do |location| %>
         <div class="card-trip my-3">
-          <% if location.photos.attached? %>
-            <%= cl_image_tag location.photos.first.key %>
-          <% else %>
-            <%= image_tag "no_img.png" %>
-          <% end %>
+          <div class="ratio ratio-4x3"> <!-- use ratio-16x9, ratio-1x1, etc. -->
+            <% if location.photos.attached? %>
+              <%= cl_image_tag location.photos.first.key,
+           class: "w-100 h-100 object-fit-cover" %>
+            <% else %>
+              <%= image_tag "no_img.png",
+           class: "w-100 h-100 object-fit-cover" %>
+            <% end %>
+          </div>
           <div class="card-trip-infos">
             <div>
               <h2><%= location.name %></h2>

@@ -15,11 +15,11 @@
             <%= link_to location_path(fav), class: "d-block text-decoration-none text-dark" do %>
               <% if fav.photos.attached? %>
                 <%= cl_image_tag fav.photos.first.key,
-                     class: "card-img-top",
+                     class: "card-img-top w-100 object-fit-cover",
                      alt: fav.name %>
               <% else %>
                 <%= image_tag "no_img.png",
-                  class: "card-img-top",
+                  class: "card-img-top w-100 h-100 object-fit-cover",
                   alt: "No image available" %>
               <% end %>
               <div class="card-trip-infos">
