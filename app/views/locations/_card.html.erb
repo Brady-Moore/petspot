@@ -10,5 +10,5 @@
       <p><%= location.category %></p>
     </div>
   </div>
-  <%= link_to "", location_path(location), class: "card-trip-link" %>
+  <%= link_to "", location_path(location, back_to: request.original_url), class: "card-trip-link" %>
 </div>
