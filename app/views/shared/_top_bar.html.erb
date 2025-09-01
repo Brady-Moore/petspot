@@ -1,8 +1,14 @@
 <nav class="navbar navbar-light bg-primary fixed-top top-bar">
   <div class="container-fluid d-flex align-items-center justify-content-between">
     <% unless current_page?(root_path) %>
-      <%= link_to :back, class: "btn btn-link text-dark p-0 m-0 d-flex align-items-center" do %>
-        <i class="bi bi-arrow-left-circle-fill fs-4"></i>
+      <% unless request.referer == request.original_url %>
+        <%= link_to :back, class: "btn btn-link text-dark p-0 m-0 d-flex align-items-center" do %>
+          <i class="bi bi-arrow-left-circle-fill fs-4"></i>
+          <% end %>
+      <% else %>
+        <%= link_to @back_url, class: "btn btn-link text-dark p-0 m-0 d-flex align-items-center" do %>
+          <i class="bi bi-arrow-left-circle-fill fs-4"></i>
+        <% end %>
       <% end %>
     <% else %>
       <span class="invisible"><i class="bi bi-arrow-left-circle-fill fs-4"></i></span>
