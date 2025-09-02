@@ -23,6 +23,7 @@
     </button>
   <% end %>
 </div>
+
 <div class="d-flex ms-3 mt-3 mb-0 fw-bold sp">
   <h2><%= @location.name %></h2>
   <% if current_user&.favorited?(@location) %>
@@ -53,6 +54,11 @@
 </p>
 <p class="ps-3 mb-0 location-address"><i class="fa-solid fa-location-dot"></i> <%= @location.address %></p>
 <p class="ps-3 location-address">〒<%= @location.postal_code %></p>
+
+<div class="text-center"> <!-- break line -->
+  <p>⸺⸺⸺⸺⸺⸺⸺⸺⸺⸺⸺</p>
+</div>
+
 <% @location.amenities.each_slice(4) do |group| %>
   <div class="d-flex justify-content-center gap-4 flex-wrap">
     <div class="col"></div>
@@ -69,9 +75,11 @@
     <div class="col"></div>
   </div>
 <% end %>
+
 <div class="text-center"> <!-- break line -->
   <p>⸺⸺⸺⸺⸺⸺⸺⸺⸺⸺⸺</p>
 </div>
+
 <h3 class="ms-3 mt-3 mb-0 fw-bold">Reviews:</h3>
 <% if @location.reviews.any? %>
   <div class="review-content-box d-flex align-items-center justify-content-center rounded-5 shadow">
@@ -96,6 +104,7 @@
 <% else %>
   <p class="ms-3">No reviews for <%= @location.name %> yet :(</p>
 <% end %>
+
 <!-- Button trigger modal -->
 <div class="ms-3 mt-3">
   <% if user_signed_in? && !@location.users.include?(current_user) && @location.owner != current_user %>
@@ -105,10 +114,12 @@
     </button>
   <% elsif !user_signed_in? %>
     <%= link_to "Leave a review", new_user_session_path,
+
           class: "btn btn-info rounded-5",
           data: { turbo: false } %>
     <% end %>
   </div>
+
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -137,10 +148,12 @@
       </div>
     </div>
   </div>
+
   <div class="text-center"> <!-- break line -->
     <p>⸺⸺⸺⸺⸺⸺⸺⸺⸺⸺⸺</p>
   </div>
-  <p class="location-map ms-3">Map View: </p>
+
+  <p class="location-map ms-3">Spot: </p>
   <!-- map display here -->
   <div class="container">
     <div id="location-map"
