@@ -39,12 +39,19 @@
     <% end %>
   <% end %>
   <div class="ms-4 mt-1">
-    <i class="fa-solid fa-share text-secondary" data-bs-toggle="modal" data-bs-target="#shareModal"></i>
+    <i class="fa-solid fa-share text-secondary pointer" data-bs-toggle="modal" data-bs-target="#shareModal"></i>
     <%= render "locations/share_modal", location: @location %>
   </div>
 </div>
-<p class="ps-3 location-address">● <%= @location.category %></p>
-<p class="ps-3 mb-0 location-address"><%= @location.address %></p>
+<p class="ps-3 location-address">
+  <%= @location.category %>
+  <% if @location.owner == current_user %>
+    <%= link_to edit_location_path(@location), class: "text-secondary text-decoration-none ms-2" do %>
+      <i class="fa-solid fa-pencil"></i>
+    <% end %>
+  <% end %>
+</p>
+<p class="ps-3 mb-0 location-address"><i class="fa-solid fa-location-dot"></i> <%= @location.address %></p>
 <p class="ps-3 location-address">〒<%= @location.postal_code %></p>
 <% @location.amenities.each_slice(4) do |group| %>
   <div class="d-flex justify-content-center gap-4 flex-wrap">
@@ -67,9 +74,9 @@
 </div>
 <h3 class="ms-3 mt-3 mb-0 fw-bold">Reviews:</h3>
 <% if @location.reviews.any? %>
-  <div class="review-content-box mt-2 rounded-5 shadow">
+  <div class="review-content-box d-flex align-items-center justify-content-center rounded-5 shadow">
     <!-- review display here -->
-    <div class="ms-3 mt-3">
+    <div class="ms-3 mt-2">
       <% @location.reviews.each do |review| %>
         <div class="review-content-box-user ms-2 mt-2 rounded-5 shadow p-2 pe-3">
           <p class="ms-3 mt-1 review-text-color-bold"><%= review.user.name %> · <span class="text-muted small"><%= time_ago_in_words(review.created_at) %> ago</span></p>
@@ -85,18 +92,19 @@
         </div>
       <% end %>
     </div>
-  <% else %>
-    <p class="ms-3">No reviews for <%= @location.name %> yet :(</p>
-  <% end %>
-  <!-- Button trigger modal -->
-  <div class="ms-3 mt-3">
-    <% if user_signed_in? && !@location.users.include?(current_user) && @location.owner != current_user %>
-      <!-- Button trigger modal -->
-      <button type="button" class="btn btn-button rounded-5 review-text-color-bold" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Leave a review
-      </button>
-    <% elsif !user_signed_in? %>
-      <%= link_to "Leave a review", new_user_session_path,
+  </div>
+<% else %>
+  <p class="ms-3">No reviews for <%= @location.name %> yet :(</p>
+<% end %>
+<!-- Button trigger modal -->
+<div class="ms-3 mt-3">
+  <% if user_signed_in? && !@location.users.include?(current_user) && @location.owner != current_user %>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-button rounded-5 review-text-color-bold" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Leave a review
+    </button>
+  <% elsif !user_signed_in? %>
+    <%= link_to "Leave a review", new_user_session_path,
           class: "btn btn-info rounded-5",
           data: { turbo: false } %>
     <% end %>
