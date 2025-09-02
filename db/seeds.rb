@@ -7,6 +7,8 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+require "open-uri"
+
 puts "Clearing old data..."
 Favorite.destroy_all
 Review.destroy_all
@@ -52,9 +54,10 @@ amenities = [
   { key: "photos",        label: "Photo spots" }
 ].map { |a| Amenity.create!(a) }
 
-puts "Seeding locations..."
-park = Location.create!(
-  owner: alice,
+puts "Seeding locations with photos..."
+
+yoyogi = Location.create!(
+  owner: nil,
   name: "Yoyogi Park Dog Run",
   category: "Park",
   address: "2-1 Yoyogi-Kamizonocho, Shibuya City, Tokyo",
@@ -63,100 +66,87 @@ park = Location.create!(
   postal_code: "151-0052",
   lat: 35.6728,
   lng: 139.6949,
-  website: "https://www.tokyo-park.or.jp/park/format/index039.html",
+  website: "https://www.tokyo-park.or.jp/park/yoyogi/index.html",
   phone: "03-1234-5678",
   source: "seed"
 )
 
-cafe = Location.create!(
-  owner: bob,
-  name: "Paws & Coffee",
-  category: "Cafe",
-  address: "1-2-3 Dog Street, Shibuya, Tokyo",
+file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756705268/1311301001_51_kjljy0.jpg")
+yoyogi.photos.attach(io: file, filename: "yoyogi.jpg", content_type: "image/jpg")
+
+
+komazawa = Location.create!(
+  owner: nil,
+  name: "Komazawa Olympic Park Dog Run",
+  category: "Park",
+  address: "1-1 Komazawa Park, Setagaya City, Tokyo",
   city: "Tokyo",
   prefecture: "Tokyo",
-  postal_code: "150-0041",
-  lat: 35.6595,
-  lng: 139.7005,
-  website: "https://pawsandcoffee.example.com",
-  phone: "03-9876-5432",
+  postal_code: "154-0013",
+  lat: 35.6264,
+  lng: 139.6611,
+  website: "https://www.tokyo-park.or.jp/park/komazawa-olympic/index.html",
+  phone: "03-1234-5679",
   source: "seed"
 )
 
-dog_cafe = Location.create!(
-  owner: alice,
-  name: "Wan Wan Terrace Cafe",
-  category: "Cafe",
-  address: "5-17-6 Jingumae, Shibuya City, Tokyo",
-  city: "Tokyo",
-  prefecture: "Tokyo",
-  postal_code: "150-0001",
-  lat: 35.6673,
-  lng: 139.7081,
-  website: "https://wanwanterrace.example.com",
-  phone: "03-5555-1111",
-  source: "seed"
-)
+file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756705295/1311201002_71_qpmi4i.jpg")
+komazawa.photos.attach(io: file, filename: "komazawa.jpg", content_type: "image/jpg")
 
-pet_store = Location.create!(
-  owner: bob,
-  name: "Shinjuku Pet Paradise",
-  category: "Pet Store",
-  address: "3-38-1 Shinjuku, Shinjuku City, Tokyo",
+bowls = Location.create!(
+  owner: nil,
+  name: "Bowls Cafe",
+  category: "Cafe",
+  address: "1F Kasumi Building, 2-5-16 Shinjuku, Shinjuku-ku, Tokyo, Japan",
   city: "Tokyo",
   prefecture: "Tokyo",
   postal_code: "160-0022",
-  lat: 35.6905,
-  lng: 139.7004,
-  website: "https://petparadise.example.com",
-  phone: "03-5555-2222",
+  lat: 35.69384,
+  lng: 139.70355,
+  website: "https://bowlscafe.com/",
+  phone: 03-3341-4331,
   source: "seed"
 )
 
-hotel = Location.create!(
-  owner: alice,
-  name: "Tokyo Pet Stay Hotel",
-  category: "Hotel",
-  address: "1-9-1 Marunouchi, Chiyoda City, Tokyo",
+
+file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756707637/top05_fym8eo.png")
+bowls.photos.attach(io: file, filename: "bowls_cafe.jpg", content_type: "image/png")
+
+dog_dept = Location.create!(
+  owner: nil,
+  name: "Dog Dept + Cafe",
+  category: "Cafe",
+  address: "1F 2-1-30 Komagata, Taito-ku, Tokyo, Japan",
   city: "Tokyo",
   prefecture: "Tokyo",
-  postal_code: "100-0005",
-  lat: 35.6812,
-  lng: 139.7671,
-  website: "https://tokyopetstay.example.com",
-  phone: "03-5555-3333",
+  postal_code: "111-0043",
+  lat: 35.70604,
+  lng: 139.79456,
+  website: "https://www.dogdept.com/shoplist/area03_21.html",
+  phone: "03-5828-3936",
   source: "seed"
 )
 
-vet = Location.create!(
-  owner: bob,
-  name: "Harajuku Animal Clinic",
-  category: "Veterinary Clinic",
-  address: "1-10-2 Jingumae, Shibuya City, Tokyo",
+file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756706659/image-49-1024x683_gok1fw.png")
+dog_dept.photos.attach(io: file, filename: "dog_dept.jpg", content_type: "image/png")
+
+kiba_park = Location.create!(
+  owner: nil,
+  name: "Kiba Park Dog Run",
+  category: "Park",
+  address: "4-6-1 Kiba, Koto City, Tokyo",
   city: "Tokyo",
   prefecture: "Tokyo",
-  postal_code: "150-0001",
-  lat: 35.6710,
-  lng: 139.7055,
-  website: "https://harajukuanimalclinic.example.com",
-  phone: "03-5555-4444",
+  postal_code: "135-0042",
+  lat: 35.6731,
+  lng: 139.8174,
+  website: "https://www.tokyo-park.or.jp/park/format/index008.html",
+  phone: "03-2222-1111",
   source: "seed"
 )
 
-pet_friendly_shop = Location.create!(
-  owner: alice,
-  name: "Dog Dept Harajuku",
-  category: "Shop",
-  address: "6-7-5 Jingumae, Shibuya City, Tokyo",
-  city: "Tokyo",
-  prefecture: "Tokyo",
-  postal_code: "150-0001",
-  lat: 35.6679,
-  lng: 139.7086,
-  website: "https://dogdept.example.com",
-  phone: "03-5555-5555",
-  source: "seed"
-)
+file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756707092/d3e15506f0291ccf789dfda05d082be1c19a5974_nwufuj.jpg")
+kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "image/jpg")
 
 test_location = Location.create!(
     owner: alice,
@@ -175,6 +165,35 @@ test_location = Location.create!(
 
 puts "Assigning amenities..."
 
+# Parks
+LocationAmenity.create!(location: yoyogi, amenity: Amenity.find_by!(key: "dog_run"))
+LocationAmenity.create!(location: yoyogi, amenity: Amenity.find_by!(key: "water"))
+LocationAmenity.create!(location: yoyogi, amenity: Amenity.find_by!(key: "trash"))
+LocationAmenity.create!(location: yoyogi, amenity: Amenity.find_by!(key: "shades"))
+
+LocationAmenity.create!(location: komazawa, amenity: Amenity.find_by!(key: "dog_run"))
+LocationAmenity.create!(location: komazawa, amenity: Amenity.find_by!(key: "water"))
+LocationAmenity.create!(location: komazawa, amenity: Amenity.find_by!(key: "trash"))
+LocationAmenity.create!(location: komazawa, amenity: Amenity.find_by!(key: "showers"))
+
+LocationAmenity.create!(location: kiba_park, amenity: Amenity.find_by!(key: "dog_run"))
+LocationAmenity.create!(location: kiba_park, amenity: Amenity.find_by!(key: "water"))
+LocationAmenity.create!(location: kiba_park, amenity: Amenity.find_by!(key: "trash"))
+LocationAmenity.create!(location: kiba_park, amenity: Amenity.find_by!(key: "shades"))
+
+# Cafes & Restaurants
+
+LocationAmenity.create!(location: bowls, amenity: Amenity.find_by!(key: "menu"))
+LocationAmenity.create!(location: bowls, amenity: Amenity.find_by!(key: "indoor"))
+LocationAmenity.create!(location: bowls, amenity: Amenity.find_by!(key: "warm"))
+LocationAmenity.create!(location: bowls, amenity: Amenity.find_by!(key: "cool"))
+
+# Shops
+LocationAmenity.create!(location: dog_dept, amenity: Amenity.find_by!(key: "photos"))
+LocationAmenity.create!(location: dog_dept, amenity: Amenity.find_by!(key: "strollers"))
+LocationAmenity.create!(location: dog_dept, amenity: Amenity.find_by!(key: "leash_station"))
+
+#Test Location
 LocationAmenity.create!(location: test_location, amenity: Amenity.find_by!(key: "water"))
 LocationAmenity.create!(location: test_location, amenity: Amenity.find_by!(key: "trash"))
 LocationAmenity.create!(location: test_location, amenity: Amenity.find_by!(key: "shades"))
@@ -189,117 +208,92 @@ LocationAmenity.create!(location: test_location, amenity: Amenity.find_by!(key: 
 LocationAmenity.create!(location: test_location, amenity: Amenity.find_by!(key: "strollers"))
 LocationAmenity.create!(location: test_location, amenity: Amenity.find_by!(key: "photos"))
 
-LocationAmenity.create!(location: park, amenity: Amenity.find_by!(key: "water"))
-LocationAmenity.create!(location: park, amenity: Amenity.find_by!(key: "dog_run"))
-LocationAmenity.create!(location: park, amenity: Amenity.find_by!(key: "trash"))
-LocationAmenity.create!(location: park, amenity: Amenity.find_by!(key: "shades"))
-
-LocationAmenity.create!(location: cafe, amenity: Amenity.find_by!(key: "shades"))
-LocationAmenity.create!(location: cafe, amenity: Amenity.find_by!(key: "menu"))
-LocationAmenity.create!(location: cafe, amenity: Amenity.find_by!(key: "indoor"))
-LocationAmenity.create!(location: cafe, amenity: Amenity.find_by!(key: "leash_station"))
-LocationAmenity.create!(location: cafe, amenity: Amenity.find_by!(key: "beds"))
-
-LocationAmenity.create!(location: dog_cafe, amenity: Amenity.find_by!(key: "menu"))
-LocationAmenity.create!(location: dog_cafe, amenity: Amenity.find_by!(key: "beds"))
-LocationAmenity.create!(location: dog_cafe, amenity: Amenity.find_by!(key: "warm"))
-LocationAmenity.create!(location: dog_cafe, amenity: Amenity.find_by!(key: "cool"))
-
-LocationAmenity.create!(location: pet_store, amenity: Amenity.find_by!(key: "cool"))
-LocationAmenity.create!(location: pet_store, amenity: Amenity.find_by!(key: "strollers"))
-LocationAmenity.create!(location: pet_store, amenity: Amenity.find_by!(key: "menu"))
-
-LocationAmenity.create!(location: hotel, amenity: Amenity.find_by!(key: "indoor"))
-LocationAmenity.create!(location: hotel, amenity: Amenity.find_by!(key: "beds"))
-LocationAmenity.create!(location: hotel, amenity: Amenity.find_by!(key: "warm"))
-LocationAmenity.create!(location: hotel, amenity: Amenity.find_by!(key: "cool"))
-LocationAmenity.create!(location: hotel, amenity: Amenity.find_by!(key: "photos"))
-
-LocationAmenity.create!(location: vet, amenity: Amenity.find_by!(key: "water"))
-LocationAmenity.create!(location: vet, amenity: Amenity.find_by!(key: "showers"))
-LocationAmenity.create!(location: vet, amenity: Amenity.find_by!(key: "indoor"))
-
-LocationAmenity.create!(location: pet_friendly_shop, amenity: Amenity.find_by!(key: "leash_station"))
-LocationAmenity.create!(location: pet_friendly_shop, amenity: Amenity.find_by!(key: "photos"))
-LocationAmenity.create!(location: pet_friendly_shop, amenity: Amenity.find_by!(key: "strollers"))
-
 
 puts "Seeding reviews..."
 
 Review.create!(
-  location: park,
-  user: alice,
-  rating: 4,
-  body: "Nice park with lots of space, though weekends get crowded."
-)
-
-Review.create!(
-  location: cafe,
-  user: admin,
-  rating: 5,
-  body: "Perfect spot to work with my pup. Friendly staff and great drinks."
-)
-
-Review.create!(
-  location: dog_cafe,
-  user: bob,
-  rating: 4,
-  body: "Cozy cafe, my dog loved the biscuits. Tables a bit small for larger dogs."
-)
-Review.create!(
-  location: dog_cafe,
+  location: yoyogi,
   user: alice,
   rating: 5,
-  body: "Such a welcoming place — shaded terrace is a lifesaver in summer."
+  body: "Huge off-leash area and plenty of shade. Weekends are busy but fun!"
 )
 
 Review.create!(
-  location: pet_store,
+  location: yoyogi,
+  user: bob,
+  rating: 4,
+  body: "Great space to run. Bring water on hot days — the fountains help."
+)
+
+Review.create!(
+  location: komazawa,
   user: admin,
   rating: 5,
-  body: "Huge selection of toys and accessories, plus stroller rentals are handy."
+  body: "Clean, organized, and big. Perfect for fetch and social dogs."
 )
 
 Review.create!(
-  location: hotel,
-  user: bob,
-  rating: 5,
-  body: "We stayed over a weekend. Heated dog beds were amazing in winter."
-)
-
-Review.create!(
-  location: vet,
+  location: komazawa,
   user: alice,
-  rating: 5,
-  body: "Very caring staff, they even had a shower station for muddy paws."
-)
-Review.create!(
-  location: vet,
-  user: admin,
   rating: 4,
-  body: "Excellent clinic, but parking can be tricky during peak hours."
+  body: "Love the separate zones. Could use more seating for owners."
 )
 
 Review.create!(
-  location: pet_friendly_shop,
+  location: kiba_park,
   user: bob,
   rating: 4,
-  body: "Trendy dog clothes and accessories, plus a great photo wall."
+  body: "Nice loop for walks, dog run is solid. Shady spots are a plus."
 )
+
+Review.create!(
+  location: bowls,
+  user: admin,
+  rating: 5,
+  body: "Cozy café, staff were super friendly with my pup. Indoor seating is clutch."
+)
+
+Review.create!(
+  location: bowls,
+  user: alice,
+  rating: 4,
+  body: "Good coffee, dog water bowls ready. Gets crowded at lunch."
+)
+
+Review.create!(
+  location: dog_dept,
+  user: bob,
+  rating: 5,
+  body: "Great merch and café menu. Photo spot is adorable!"
+)
+
+Review.create!(
+  location: dog_dept,
+  user: alice,
+  rating: 4,
+  body: "Leash hooks at tables are so convenient. Dessert was great."
+)
+
+Review.create!(
+  location: test_location,
+  user: admin,
+  rating: 3,
+  body: "Test spot: has the basics, excited to see how it grows."
+)
+
 
 puts "Seeding favorites..."
 
-alice.favorite(cafe)
-alice.favorite(dog_cafe)
-alice.favorite(pet_store)
+alice.favorite(yoyogi)
+alice.favorite(bowls)
+alice.favorite(dog_dept)
 
-bob.favorite(park)
-bob.favorite(hotel)
-bob.favorite(pet_friendly_shop)
+bob.favorite(komazawa)
+bob.favorite(kiba_park)
+bob.favorite(dog_dept)
 
-admin.favorite(vet)
-admin.favorite(dog_cafe)
-admin.favorite(park)
-
+admin.favorite(yoyogi)
+admin.favorite(komazawa)
+admin.favorite(bowls)
 
 puts "✅ Seeding complete!"

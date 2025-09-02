@@ -20,6 +20,7 @@ class LocationsController < ApplicationController
   def show
     @location = Location.find(params[:id])
     @review = Review.new
+    @back_url = params[:back_to]
   end
 
   def new
