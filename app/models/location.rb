@@ -16,6 +16,15 @@ class Location < ApplicationRecord
       tsearch: { prefix: true }
     }
 
+  scope :nearby, ->(lat, lng, radius_km = 1000) {
+    where(%{
+      earth_distance(
+        ll_to_earth(lat, lng),
+        ll_to_earth(?, ?)
+      ) < ?
+    }, lat, lng, radius_km * 1000000)
+  }
+
   def avg_rating
   return 'No reviews' if reviews.empty?
 
