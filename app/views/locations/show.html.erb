@@ -63,9 +63,9 @@
     style="height: 300px; max-width: 600px;"
     data-controller="mapbox"
     data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-    data-mapbox-lat-value="<%= @location.lat %>"
-    data-mapbox-lng-value="<%= @location.lng %>"
-    data-mapbox-name-value="<%= @location.name %>">
+    data-mapbox-user-lat-value="<%= @user_lat %>"
+    data-mapbox-user-lng-value="<%= @user_lng %>"
+    data-mapbox-locations-value="<%= [@location].map { |l| { lat: l.lat, lng: l.lng, name: l.name } }.to_json %>">
   </div>
 </div>
 

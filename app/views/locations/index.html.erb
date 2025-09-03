@@ -1,3 +1,12 @@
+<div id="map"
+     style="height: 300px;"
+     data-controller="mapbox"
+     data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+     data-mapbox-user-lat-value="<%= @user_lat %>"
+     data-mapbox-user-lng-value="<%= @user_lng %>"
+     data-mapbox-locations-value="<%= @locations.map { |l| { lat: l.lat, lng: l.lng, name: l.name } }.to_json %>">
+</div>
+
 <div class="container my-3">
   <%# <%= @locations.count%>
   <%if @locations.any? %>

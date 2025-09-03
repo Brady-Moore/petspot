@@ -15,12 +15,27 @@ class LocationsController < ApplicationController
         .having("COUNT(DISTINCT amenities.id) = ?", selected_amenities.size)
       )
     end
+
+    lat = current_user&.latitude || params[:lat]
+    lng = current_user&.longitude || params[:lng]
+    radius = params[:radius] || 5
+
+    @user_lat = lat
+    @user_lng = lng
+
+    @locations = @locations.search(params[:q]) if params[:q].present?
+    @locations = @locations.nearby(lat, lng, radius) if lat.present? && lng.present?
   end
 
   def show
     @location = Location.find(params[:id])
     @review = Review.new
     @back_url = params[:back_to]
+
+    lat = current_user&.latitude || params[:lat]
+    lng = current_user&.longitude || params[:lng]
+    @user_lat = lat
+    @user_lng = lng
   end
 
   def new
