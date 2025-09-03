@@ -11,7 +11,7 @@
   <div class="card-trip-infos">
     <div>
       <h2><%= location.name %></h2>
-      <p><%= location.category %></p>
+      <p><i class="<%= location.category_class %>"></i> <%= location.category %></p>
     </div>
   </div>
   <%= link_to "", location_path(location, back_to: request.original_url), class: "card-trip-link" %>

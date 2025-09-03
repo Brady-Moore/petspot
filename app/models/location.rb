@@ -26,8 +26,19 @@ class Location < ApplicationRecord
   }
 
   def avg_rating
-  return 'No reviews' if reviews.empty?
+    return 'No reviews' if reviews.empty?
 
-  reviews.pluck(:rating).sum.fdiv(reviews.length).round
+    reviews.pluck(:rating).sum.fdiv(reviews.length).round
+  end
+
+  def category_class
+    case category
+    when "Cafe" then 'fa-solid fa-mug-saucer'
+    when "Park" then 'fa-solid fa-tree'
+    when "Restaurant" then 'fa-solid fa-utensils'
+    when "Shop" then 'fa-solid fa-shop'
+    else
+      'fa-solid fa-circle-info'
+    end
   end
 end

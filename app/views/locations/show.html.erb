@@ -44,7 +44,7 @@
   </div>
 </div>
 <p class="ps-3 location-address">
-  <%= @location.category %>
+  <i class="<%= @location.category_class %>"></i> <%= @location.category %>
   <% if @location.owner == current_user %>
     <%= link_to edit_location_path(@location), class: "text-secondary text-decoration-none ms-2" do %>
       <i class="fa-solid fa-pencil"></i>

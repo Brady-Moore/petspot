@@ -4,9 +4,7 @@
   <%= f.input :category, collection: Location::CATEGORIES, include_blank: false %>
   <%= f.input :address %>
   <%= f.input :city %>
-  <%= f.input :prefecture %>
-  <%= f.input :postal_code %>
-  <%= f.input :website %>
   <%= f.input :phone %>
+  <%= render "locations/filters" %>
   <%= f.submit class: "btn btn-button mb-5 rounded-5 review-text-color-bold" %>
 <% end %>

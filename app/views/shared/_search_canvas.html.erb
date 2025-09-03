@@ -4,7 +4,7 @@
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body small">
-    <% unless current_page?(root_path) %>
+    <% unless current_page?(root_path) || current_page?(new_location_path) %>
       <%= render "locations/search", groups: @groups %>
     <% end %>
   </div>

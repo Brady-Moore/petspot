@@ -46,6 +46,9 @@ class LocationsController < ApplicationController
     @location = Location.new(location_params)
     @location.owner = current_user
     if @location.save
+      params["amenities"].each do |name|
+        LocationAmenity.create(location: @location, amenity: Amenity.find_by(key: name))
+      end
       redirect_to location_path(@location)
     else
       render "new", status: :unprocessable_entity
