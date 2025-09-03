@@ -22,7 +22,9 @@ pedro = User.create!(
   name: "Pedro",
   email: "pedro@example.com",
   password: "password",
-  role: :admin
+  role: :admin,
+  latitude: 35.657167,
+  longitude: 139.703167,
 )
 file = File.open("app/assets/images/pedro.jpg")
 pedro.photo.attach(io: file, filename: "user.jpg", content_type: "image/jpg")
@@ -39,19 +41,25 @@ admin = User.create!(
   name: "Admin User",
   email: "admin@example.com",
   password: "password",
-  role: :admin
+  role: :admin,
+  latitude: 35.657167,
+  longitude: 139.703167,
 )
 
 alice = User.create!(
   name: "Alice",
   email: "alice@example.com",
-  password: "password"
+  password: "password",
+  latitude: 35.657167,
+  longitude: 139.703167,
 )
 
 bob = User.create!(
   name: "Bob",
   email: "bob@example.com",
-  password: "password"
+  password: "password",
+  latitude: 35.657167,
+  longitude: 139.703167,
 )
 
 puts "Seeding amenities..."
