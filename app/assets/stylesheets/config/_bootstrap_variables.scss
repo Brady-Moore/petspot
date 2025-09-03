@@ -44,6 +44,7 @@ $light: $light-gray;
 $dark: #1e293b; // rich dark for text/icons
 $review: $light-yellow;
 $button: $button-blue;
+$yellow: $lighter-yellow;
 
 // Make utilities (bg-*, text-*) aware of our palette
 $theme-colors: (
@@ -58,6 +59,7 @@ $theme-colors: (
   "review": $review,
   "button": $button,
   "gray": $gray,
+  "yellow": $yellow,
 );
 
 // Buttons: ensure readable text on yellow
