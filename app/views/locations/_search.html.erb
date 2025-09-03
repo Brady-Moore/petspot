@@ -7,13 +7,13 @@
   </div>
   <%# Filter %>
   <div class="d-flex align-items-center">
-    <div class="container-md mx-3 my-4 pt-4 rounded-5 border filters shadow-lg p-3 mb-5 bg-body rounded">
+    <div class="container-md mx-3 my-4 pt-4 rounded-5 border filters shadow-lg p-3 mb-5 bg-body rounded yellow-color">
       <div class="container">
         <div class="row">
           <div class="col-6 d-flex flex-column">
             <% @groups[2].each do |amenity| %>
               <label for="<%= amenity.key%>">
-                <i class="fa-solid fa-paw"></i>
+                <i class="fa-solid fa-paw fa-rotate-by" style="--fa-rotate-angle: -20deg;" ></i>
                 <span><%= amenity.label%></span>
                 <input type="checkbox" name="amenities[]" class="checkbox" <%= "checked" if params[:amenities]&.include?(amenity.key) %> id="<%= amenity.key%>" value="<%= amenity.key%>">
               </label>
@@ -22,7 +22,7 @@
           <div class="col-6 d-flex flex-column">
             <% @groups[1].each do |amenity| %>
               <label for="<%= amenity.key%>">
-                <i class="fa-solid fa-paw"></i>
+                <i class="fa-solid fa-paw fa-rotate-by" style="--fa-rotate-angle: -20deg;" ></i>
                 <span><%= amenity.label%></span>
                 <input type="checkbox" name="amenities[]"class="checkbox" <%= "checked" if params[:amenities]&.include?(amenity.key) %> id="<%= amenity.key%>" value="<%= amenity.key%>">
               </label>
@@ -34,7 +34,7 @@
               <div class="col-6 d-flex flex-column">
                 <% @groups[0].each do |amenity| %>
                   <label for="<%= amenity.key%>">
-                    <i class="fa-solid fa-paw"></i>
+                   <i class="fa-solid fa-paw fa-rotate-by" style="--fa-rotate-angle: -20deg;" ></i>
                     <span><%= amenity.label%></span>
                     <input type="checkbox" name="amenities[]" class="checkbox" <%= "checked" if params[:amenities]&.include?(amenity.key) %> id="<%= amenity.key%>" value="<%= amenity.key%>">
                   </label>
@@ -43,7 +43,7 @@
               <div class="col-6 d-flex flex-column">
                 <% @groups[3].each do |amenity| %>
                   <label for="<%= amenity.key%>">
-                    <i class="fa-solid fa-paw"></i>
+                   <i class="fa-solid fa-paw fa-rotate-by" style="--fa-rotate-angle: -20deg;" ></i>
                     <span><%= amenity.label%></span>
                     <input type="checkbox" name="amenities[]"class="checkbox" <%= "checked" if params[:amenities]&.include?(amenity.key) %> id="<%= amenity.key%>" value="<%= amenity.key%>">
                   </label>
