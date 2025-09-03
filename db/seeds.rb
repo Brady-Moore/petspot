@@ -28,6 +28,13 @@ file = File.open("app/assets/images/pedro.jpg")
 pedro.photo.attach(io: file, filename: "user.jpg", content_type: "image/jpg")
 pedro.save
 
+pet = Pet.create!(
+  name: "Lily",
+  size: "large",
+  breed: "Husky",
+  user: pedro
+)
+
 admin = User.create!(
   name: "Admin User",
   email: "admin@example.com",
