@@ -89,7 +89,7 @@ yoyogi = Location.create!(
 )
 
 file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756705268/1311301001_51_kjljy0.jpg")
-yoyogi.photo.attach(io: file, filename: "yoyogi.jpg", content_type: "image/jpg")
+yoyogi.photos.attach(io: file, filename: "yoyogi.jpg", content_type: "image/jpg")
 
 
 komazawa = Location.create!(
@@ -108,7 +108,7 @@ komazawa = Location.create!(
 )
 
 file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756705295/1311201002_71_qpmi4i.jpg")
-komazawa.photo.attach(io: file, filename: "komazawa.jpg", content_type: "image/jpg")
+komazawa.photos.attach(io: file, filename: "komazawa.jpg", content_type: "image/jpg")
 
 bowls = Location.create!(
   owner: nil,
@@ -121,13 +121,12 @@ bowls = Location.create!(
   lat: 35.69384,
   lng: 139.70355,
   website: "https://bowlscafe.com/",
-  phone: 03-3341-4331,
+  phone: "03-3341-4331",
   source: "seed"
 )
 
-
 file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756707637/top05_fym8eo.png")
-bowls.photo.attach(io: file, filename: "bowls_cafe.jpg", content_type: "image/png")
+bowls.photos.attach(io: file, filename: "bowls_cafe.jpg", content_type: "image/png")
 
 dog_dept = Location.create!(
   owner: nil,
@@ -145,7 +144,7 @@ dog_dept = Location.create!(
 )
 
 file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756706659/image-49-1024x683_gok1fw.png")
-dog_dept.photo.attach(io: file, filename: "dog_dept.jpg", content_type: "image/png")
+dog_dept.photos.attach(io: file, filename: "dog_dept.jpg", content_type: "image/png")
 
 kiba_park = Location.create!(
   owner: nil,
@@ -163,22 +162,111 @@ kiba_park = Location.create!(
 )
 
 file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756707092/d3e15506f0291ccf789dfda05d082be1c19a5974_nwufuj.jpg")
-kiba_park.photo.attach(io: file, filename: "kiba_park.jpg", content_type: "image/jpg")
+kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "image/jpg")
 
-# test_location = Location.create!(
-#     owner: alice,
-#   name: "Test Location",
-#   category: "Test",
-#   address: "1-2-3- Meguro, Shibuya City, Tokyo",
-#   city: "Tokyo",
-#   prefecture: "Tokyo",
-#   postal_code: "123-1234",
-#   lat: 30,
-#   lng: 130,
-#   website: "https://testdog.example.com",
-#   phone: "080-9999-9999",
-#   source: "seed"
-# )
+  wonderful_nature_village = Location.create!(
+    name: "Wonderful Nature Village",
+    category: "Park",
+    address:  "Tokyo, Akiruno, Kamiyotsugi, 白岩60",
+    city: "Akiruno",
+    prefecture: "Tokyo",
+    postal_code: "197-0832",
+    lat: "35.717456240518544",
+    lng: "139.2617632864416",
+    website: "https://www.wnv.tokyo/intro",
+    phone: "042558586",
+    amenities: [Amenity.find_by(key: "water")]
+  )
+
+    file = URI.open("https://lh3.googleusercontent.com/gps-cs-s/AC9h4nruo4xjsYD-eS06m7_ahEMjbH12pPkGj_uZYMptSh34XQQyHWNjlUr4vwJqh7vwPC0m8cLU7GQv1r4QrgZTgB049lcx-D0068lPhE4udowLSZ91cMsajuTXa6uZY4Dh_AD-xDDl=w408-h306-k-no")
+  kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "image/jpg")
+
+  wankonoshippo = Location.create!(
+    name: "Wankonoshippo",
+    category: "Cafe",
+    address: "2 Chome-23-7 Nakamagome, Ota City, Tokyo",
+    city: "Nakagome",
+    prefecture: "Tokyo",
+    postal_code: "143-0027",
+    lat: "35.59449620523742",
+    lng: "139.71086923674963",
+    website: "https://wankonoshippp.com/",
+    phone: "035728932",
+    amenities: [Amenity.find_by(key: "water")]
+  )
+
+    file = URI.open("https://lh3.googleusercontent.com/gps-cs-s/AC9h4nruo4xjsYD-eS06m7_ahEMjbH12pPkGj_uZYMptSh34XQQyHWNjlUr4vwJqh7vwPC0m8cLU7GQv1r4QrgZTgB049lcx-D0068lPhE4udowLSZ91cMsajuTXa6uZY4Dh_AD-xDDl=w408-h306-k-no")
+    kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "image/jpg")
+
+  sippopo_dogrun = Location.create!(
+    name: "SIPPOPO DOGRUN",
+    category: "Dog run",
+    address: "5 Chome-2-16 Chigasakihigashi, Tsuzuki Ward, Yokohama, Kanagawa",
+    city: "Chigasaki Higashi",
+    prefecture: "Kanagawa",
+    postal_code: "224-0033",
+    lat: "35.54742178922918",
+    lng: "139.58231344001123",
+    website: "http://sippopo.com/dogrun",
+    phone: "045263620",
+    amenities: [Amenity.find_by(key: "water")]
+  )
+
+  file = URI.open("https://lh3.googleusercontent.com/gps-cs-s/AC9h4nq5_UlGefvBem8AT8UO5dlZwQASFLJoi0hCcCsYvLpA01fGEmL1JD3wJGkjTo23zVJRRiNfztmoLH_39ZrR5gMOUYOBYllrpBIH-YiJ4GE1FfGzaOo1PaRGZi0CysMxpKKHWcXL0zcgEi6B=w408-h544-k-no")
+  kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "image/jpg")
+
+
+  minato_dog_park = Location.create!(
+    name: "Minato Dog Park",
+    category: "Dog park",
+    address: "1 Chome-2-28 Konan, Minato City, Tokyo",
+    city: "Minato city",
+    prefecture: "Tokyo",
+    postal_code: "108-0075",
+    lat: "35.63843834043306",
+    lng: ", 139.74462184423902",
+    website: "https://www.city.minato.tokyo.jp/shiba-koudoboku/shibaura/koho/dogguran.html",
+    phone: "05654545322",
+    amenities: [Amenity.find_by(key: "water")]
+  )
+
+  file = URI.open("https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqGW50Zl4ZOMVUfiz6NtC-RI2QLqcMHg13GfH-2wLnRhK_kUkLVXehZueKBsRu965gkU8GTnm4kmTMJmGpzdLFIu2nPuLqqHDKs7t4O9ctFRRJ6zoTSCIedZlIakFIhXRCF5UGa=w408-h544-k-no")
+  kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "image/jpg")
+
+
+  dog_park_meguro = Location.create!(
+    category: "Dog park Meguro",
+    address: "5-chōme-20-1 Yakumo, 世田谷区 Meguro City, Tokyo 152-0023",
+    city: "Meguro City",
+    prefecture: "Tokyo",
+    postal_code: "152-0023",
+    lat: "35.62425929283944",
+    lng: " 139.66414491349343",
+    website: "http://www.tef.or.jp/kopgp/dogrun.jsp",
+    phone: "+8133421643",
+    amenities: [Amenity.find_by(key: "water")]
+  )
+
+  file = URI.open("https://lh3.googleusercontent.com/gps-cs-s/AC9h4np3WUfqhR4A9hazU_HX0jzRNWwn8je6DqJTzSk5dg19lsPam6k6uNSq3j5GfnyuG1dpLpMoSw-uIJflo1JcaHP_i4JLUrmfHaC2A0XmOAYdfstL49eRRFdZL6KpdohgD66VAGZ9=w408-h570-k-no")
+  kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "image/jpg")
+
+
+  roka_koshuen_dog_run = Location.create!(
+    name: "Roka Koshu-en Dog Run",
+    category: "Dog run",
+    address: "1 Chome-20-1 Kasuya, Setagaya City, Tokyo 157-0063",
+    city: "Setagaya",
+    prefecture: "Tokyo",
+    postal_code: "157-0063",
+    lat: "35.66288767683495",
+    lng: "139.6123802456559",
+    website: "https://www.tokyo-park.or.jp/park/format/index007.html",
+    phone: "033302501",
+    amenities: [Amenity.find_by(key: "water")]
+  )
+
+   file = URI.open("https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqNBXCVzhNxouW99IOQ7PSp_rvZuAErZ2cKeSezsQBgoqHzdE7TZmKV9YGZ3v1GXYLbJKpDmksrpkdIhtjWv1aAmLxnuRXUzzQdcYmYUTLPX0R9SvNylRnOM1HdMMk4aQe8O7OC=w408-h544-k-no")
+  kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "image/jpg")
 
 puts "Assigning amenities..."
 
@@ -291,14 +379,6 @@ Review.create!(
   body: "Leash hooks at tables are so convenient. Dessert was great."
 )
 
-# Review.create!(
-#   location: test_location,
-#   user: admin,
-#   rating: 3,
-#   body: "Test spot: has the basics, excited to see how it grows."
-# )
-
-
 puts "Seeding favorites..."
 
 alice.favorite(yoyogi)
@@ -313,104 +393,4 @@ admin.favorite(yoyogi)
 admin.favorite(komazawa)
 admin.favorite(bowls)
 
-real_locations = [
-  {
-    name: "Wonderful Nature Village",
-    category: "Park",
-    address:  "Tokyo, Akiruno, Kamiyotsugi, 白岩60",
-    city: "Akiruno",
-    prefecture: "Tokyo",
-    postal_code: "197-0832",
-    lat: "35.717456240518544",
-    lng: "139.2617632864416",
-    website: "https://www.wnv.tokyo/intro",
-    phone: "042558586",
-    photo: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nruo4xjsYD-eS06m7_ahEMjbH12pPkGj_uZYMptSh34XQQyHWNjlUr4vwJqh7vwPC0m8cLU7GQv1r4QrgZTgB049lcx-D0068lPhE4udowLSZ91cMsajuTXa6uZY4Dh_AD-xDDl=w408-h306-k-no",
-    amenities: ['warm', 'water']
-  },
-  {
-    name: "Wankonoshippo",
-    category: "Cafe",
-    address: "2 Chome-23-7 Nakamagome, Ota City, Tokyo",
-    city: "Nakagome",
-    prefecture: "Tokyo",
-    postal_code: "143-0027",
-    lat: "35.59449620523742",
-    lng: "139.71086923674963",
-    website: "https://wankonoshippp.com/",
-    phone: "035728932",
-    photo: "",
-    amenities: ['warm', 'water']
-  },
-  {
-    name: "SIPPOPO DOGRUN",
-    category: "Dog run",
-    address: "5 Chome-2-16 Chigasakihigashi, Tsuzuki Ward, Yokohama, Kanagawa",
-    city: "Chigasaki Higashi",
-    prefecture: "Kanagawa",
-    postal_code: "224-0033",
-    lat: "35.54742178922918",
-    lng: "139.58231344001123",
-    website: "http://sippopo.com/dogrun",
-    phone: "045263620",
-    photo: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nq5_UlGefvBem8AT8UO5dlZwQASFLJoi0hCcCsYvLpA01fGEmL1JD3wJGkjTo23zVJRRiNfztmoLH_39ZrR5gMOUYOBYllrpBIH-YiJ4GE1FfGzaOo1PaRGZi0CysMxpKKHWcXL0zcgEi6B=w408-h544-k-no",
-    amenities: ['water']
-  },
-  {
-    name: "Minato Dog Park",
-    category: "Dog park",
-    address: "1 Chome-2-28 Konan, Minato City, Tokyo",
-    city: "Minato city",
-    prefecture: "Tokyo",
-    postal_code: "108-0075",
-    lat: "35.63843834043306",
-    lng: ", 139.74462184423902",
-    website: "https://www.city.minato.tokyo.jp/shiba-koudoboku/shibaura/koho/dogguran.html",
-    phone: "",
-    photo: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqGW50Zl4ZOMVUfiz6NtC-RI2QLqcMHg13GfH-2wLnRhK_kUkLVXehZueKBsRu965gkU8GTnm4kmTMJmGpzdLFIu2nPuLqqHDKs7t4O9ctFRRJ6zoTSCIedZlIakFIhXRCF5UGa=w408-h544-k-no",
-    amenities: ['warm', 'water']
-  },
-  {
-    category: "Dog park",
-    address: "5-chōme-20-1 Yakumo, 世田谷区 Meguro City, Tokyo 152-0023",
-    city: "Meguro City",
-    prefecture: "Tokyo",
-    postal_code: "152-0023",
-    lat: "35.62425929283944",
-    lng: " 139.66414491349343",
-    website: "http://www.tef.or.jp/kopgp/dogrun.jsp",
-    phone: "+81 3-3421-643",
-    photo: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4np3WUfqhR4A9hazU_HX0jzRNWwn8je6DqJTzSk5dg19lsPam6k6uNSq3j5GfnyuG1dpLpMoSw-uIJflo1JcaHP_i4JLUrmfHaC2A0XmOAYdfstL49eRRFdZL6KpdohgD66VAGZ9=w408-h570-k-no",
-    amenities: ['warm', 'water']
-  },
-  {
-    name: "Roka Koshu-en Dog Run",
-    category: "Dog run",
-    address: "1 Chome-20-1 Kasuya, Setagaya City, Tokyo 157-0063",
-    city: "Setagaya",
-    prefecture: "Tokyo",
-    postal_code: "157-0063",
-    lat: "35.66288767683495",
-    lng: "139.6123802456559",
-    website: "https://www.tokyo-park.or.jp/park/format/index007.html",
-    phone: "033302501",
-    photo: "https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqNBXCVzhNxouW99IOQ7PSp_rvZuAErZ2cKeSezsQBgoqHzdE7TZmKV9YGZ3v1GXYLbJKpDmksrpkdIhtjWv1aAmLxnuRXUzzQdcYmYUTLPX0R9SvNylRnOM1HdMMk4aQe8O7OC=w408-h544-k-no",
-    amenities: ['warm', 'water']
-  }
-]
-
-real_locations.each do |attributes|
-  photo_url = attributes.delete(:photo)
-  amenities = attributes.delete(:amenities)
-  location = Location.create!(attributes)
-
-  amenities&.each do |amenity|
-    LocationAmenity.create!(location: location, amenity: Amenity.find_by(key: amenity))
-  end
-
-  if photo_url && photo_url != ""
-    file = URI.open(photo_url)
-    location.photo.attach(io: file, filename: "photo.jpg", content_type: "image/jpg")
-  end
-end
 puts "✅ Seeding complete!"

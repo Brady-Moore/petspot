@@ -2,8 +2,12 @@
   <h1>Pedro likes pie</h1>
   <div class="carousel-inner">
     <% @locations.each_with_index do |location, index| %>
-      <div class="carousel-item<%= index == 0 ? " active" : ""%>">
-        <img src="<%= cl_image_path(location.photo.key) %>" class="d-block w-100" alt=<%=location.name%> >
+      <div class="carousel-item<%= index == 0 ? " active" : "" %>">
+      <% if location.photos.attached? %>
+        <%= cl_image_tag location.photos.first.key, class: "d-block w-100", alt: location.name %>
+      <% else %>
+      <%= image_tag "no_img.png", class: "d-block w-100", alt: location.name %>
+        <% end %>
       </div>
     <% end %>
   </div>
