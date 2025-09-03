@@ -3,3 +3,14 @@
   width: 100%;
   object-fit: cover;
 }
+
+.carousel h1 {
+  position: absolute;
+    bottom: 50%;
+    transform: translateY(50%);
+    left: 20px;
+    z-index: 1;
+    color: white;
+    text-shadow: 3px 3px 0px red;
+    background: rgba(255, 255, 0, .3);
+}

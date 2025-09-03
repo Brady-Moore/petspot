@@ -1,14 +1,14 @@
 <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+  <h1>Pedro likes pie</h1>
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <%= image_tag "daniel-brunsteiner-_jd5ryWK5J4-unsplash.jpg", class: "d-block w-100", alt: "Dog"%>
-    </div>
-    <div class="carousel-item">
-      <%= image_tag "Fountain_Yoyogipark.jpeg", class: "d-block w-100", alt: "Dog"%>
-    </div>
-    <div class="carousel-item">
-      <%= image_tag "rui-alves-bUueTEY-FOc-unsplash.jpg", class: "d-block w-100", alt: "Dog"%>
-    </div>
+    <% @locations.each_with_index do |location, index| %>
+      <div class="carousel-item<%= index == 0 ? " active" : ""%>">
+        <img src="<%= cl_image_path(location.photo.key) %>" class="d-block w-100" alt=<%=location.name%> >
+      </div>
+    <% end %>
   </div>
 </div>
 <%= render "locations/search", groups: @groups %>
+
+  <%# photo example %>
+   <%# <%= image_tag "rui-alves-bUueTEY-FOc-unsplash.jpg", class: "d-block w-100", alt: "Dog"%>
