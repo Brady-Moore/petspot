@@ -1,0 +1,25 @@
+<div class="container mt-4">
+  <div class="d-flex justify-content-center align-items-center">
+    <% if current_user.photo.attached? %>
+      <%= cl_image_tag current_user.photo.key,
+           class: "avatar-large me-3" %>
+    <% else %>
+      <%= image_tag "no_img.png",
+           class: "avatar-large me-3" %>
+    <% end %>
+    <h3><%= current_user.name %></h3>
+    <%= link_to edit_user_registration_path, class: "text-secondary text-decoration-none ms-2" do %>
+      <i class="fa-solid fa-pencil"></i>
+    <% end %>
+  </div>
+  <h3 class="mt-5">Activities </h3>
+  <div class="cards">
+    <% if current_user.locations.any? %>
+      <% current_user.locations.each do |location| %>
+        <%= render "locations/card", location: location %>
+      <% end %>
+    <% else %>
+      <p>You haven't added any locations yet.</p>
+    <% end %>
+  </div>
+</div>

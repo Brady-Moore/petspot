@@ -10,5 +10,6 @@ Rails.application.routes.draw do
     end
   end
   resources :favorites, only: [:index, :destroy, :create]
-end
+  get "profile", to: "users#profile", as: :profile
 
+end

@@ -10,4 +10,5 @@ class User < ApplicationRecord
 
   has_many :locations, foreign_key: :owner_id, dependent: :nullify
   has_many :reviews, dependent: :destroy
+  has_one_attached :photo
 end

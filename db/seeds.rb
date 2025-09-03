@@ -18,6 +18,16 @@ Location.destroy_all
 User.destroy_all
 
 puts "Seeding users..."
+pedro = User.create!(
+  name: "Pedro",
+  email: "pedro@example.com",
+  password: "password",
+  role: :admin
+)
+file = File.open("app/assets/images/pedro.jpg")
+pedro.photo.attach(io: file, filename: "user.jpg", content_type: "image/jpg")
+pedro.save
+
 admin = User.create!(
   name: "Admin User",
   email: "admin@example.com",
