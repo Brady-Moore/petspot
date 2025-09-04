@@ -15,6 +15,7 @@ Review.destroy_all
 LocationAmenity.destroy_all
 Amenity.destroy_all
 Location.destroy_all
+Pet.destroy_all
 User.destroy_all
 
 puts "Seeding users..."
@@ -232,7 +233,7 @@ kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "imag
     prefecture: "Tokyo",
     postal_code: "108-0075",
     lat: "35.63843834043306",
-    lng: ", 139.74462184423902",
+    lng: "139.74462184423902",
     website: "https://www.city.minato.tokyo.jp/shiba-koudoboku/shibaura/koho/dogguran.html",
     phone: "05654545322",
     amenities: [Amenity.find_by(key: "water")]
@@ -250,7 +251,7 @@ kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "imag
     prefecture: "Tokyo",
     postal_code: "152-0023",
     lat: "35.62425929283944",
-    lng: " 139.66414491349343",
+    lng: "139.66414491349343",
     website: "http://www.tef.or.jp/kopgp/dogrun.jsp",
     phone: "+8133421643",
     amenities: [Amenity.find_by(key: "water")]
