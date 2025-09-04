@@ -85,9 +85,9 @@
   </div>
 <% end %>
 <div class="break-line"></div>
-<h3 class="ms-3 mt-3 mb-0 fw-bold">Reviews:</h3>
+<h3 class="ms-3 mt-3 mb-0 fw-bold">Reviews</h3>
 <% if @location.reviews.any? %>
-  <div class="review-content-box rounded-5 shadow">
+  <div class="review-content-box rounded-5 shadow pt-3">
     <!-- review display here -->
     <div class="ms-3 mt-2">
       <% @location.reviews.each do |review| %>
@@ -126,15 +126,15 @@
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog rounded-5">
-    <div class="modal-content rounded-5">
-      <div class="bg-yellow container card block rounded-5">
-        <h1 class="mt-3 fw-bold review-title">
-          Leave a review for <%= @location.name %>
-          <button type="button" class="btn-close ms-3" data-bs-dismiss="modal" aria-label="Close"></button>
-        </h1>
+    <div class="modal-content rounded-5 bg-yellow container card block rounded-5">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="\ModalLabel"></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
         <div class="review-content">
           <%= simple_form_for [@location, @review] do |f| %>
-            <%= f.input :body, label: "What did you think of #{@location.name}?" %>
+            <%= f.input :body, label: "How was #{@location.name}?", label_html: { class: 'fs-4' } %>
             <div class="star-rating">
               <% 5.downto(1) do |i| %>
                 <input type="radio" id="star-<%= i + 1 %>" name="review[rating]" value="<%= i %>" <%= "checked" if i == 2 %> />
