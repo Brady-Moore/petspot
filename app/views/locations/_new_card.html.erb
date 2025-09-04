@@ -1,8 +1,7 @@
+
 <%= link_to location_path(location, back_to: request.original_url) do %>
-<div class="card-category brdr-gray" style="background-image: linear-gradient(10deg, rgba(0,0,0,0.8)20%, rgba(0,0,0,0.2)50%), url(<%= cl_image_path location.photos.first.key %>)">
-  <div>
+  <div class="card-category brdr-gray" style="background-image: linear-gradient(10deg, rgba(0,0,0,0.8)20%, rgba(0,0,0,0.2)50%), url(<%=  location.photos.attached? ? cl_image_path(location.photos.first.key) : image_path("no_img.png")%>)">
     <h2><%= location.name %></h2>
     <p><i class="<%= location.category_class %>"></i> <%= location.category %></p>
   </div>
-</div>
 <% end %>
