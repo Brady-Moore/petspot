@@ -187,7 +187,7 @@ kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "imag
     amenities: [Amenity.find_by(key: "water")]
   )
 
-    file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756983424/production/u0mdmr1r6bl7r10296r0uet7e4q1.jpg")
+    file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756992582/0uld946izc4sunp5olk7xjcl3ovg_q9bxy6.jpg")
   wonderful_nature_village.photos.attach(io: file, filename: "wonderful_nature_village.jpg", content_type: "image/jpg")
 
   wankonoshippo = Location.create!(
