@@ -18,6 +18,7 @@
   input{
     width: 240px;
     height: 36px;
+    text-align: center;
   }
   &:focus-within{
     box-shadow: 0 0 0 2px rgb(140, 140, 140);
@@ -30,9 +31,4 @@
       outline:none;
     }
     }
-  }
-
-  p {
-    color: #838383;
-    margin-left: 10px;
   }
