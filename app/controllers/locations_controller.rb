@@ -83,9 +83,19 @@ class LocationsController < ApplicationController
     redirect_back(fallback_location: @location)
   end
 
+  def get_coords
+    @location = Location.new
+    if location_params[:photos].present?
+      first_photo = location_params[:photos].find { |el| el.class != String }
+      metadata = Exiftool.new(first_photo.tempfile.path)
+      @location.lat = metadata.to_hash[:gps_latitude]
+      @location.lng = metadata.to_hash[:gps_longitude]
+    end
+  end
+
   private
 
   def location_params
-    params.require(:location).permit(:name, :category, :address, :city, :prefecture, :postal_code, :website, :phone, photos: [])
+    params.require(:location).permit(:name, :category, :address, :city, :prefecture, :postal_code, :website, :phone, :lat, :lng, photos: [])
   end
 end

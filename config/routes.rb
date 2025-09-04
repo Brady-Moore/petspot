@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   end
   resources :favorites, only: [:index, :destroy, :create]
   get "profile", to: "users#profile", as: :profile
-
+  post "get_coords", to: "locations#get_coords", defaults: { format: :json }
 end
