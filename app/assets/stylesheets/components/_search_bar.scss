@@ -5,6 +5,7 @@
   background: rgb(205, 205, 205);
   border-radius: 200px;
   padding: 6px 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 
   button{
       &:focus{
@@ -17,6 +18,7 @@
   input{
     width: 240px;
     height: 36px;
+    text-align: center;
   }
   &:focus-within{
     box-shadow: 0 0 0 2px rgb(140, 140, 140);
