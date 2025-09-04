@@ -5,6 +5,7 @@
   background: rgb(205, 205, 205);
   border-radius: 200px;
   padding: 6px 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 
   button{
       &:focus{
@@ -29,4 +30,9 @@
       outline:none;
     }
     }
+  }
+
+  p {
+    color: #838383;
+    margin-left: 10px;
   }

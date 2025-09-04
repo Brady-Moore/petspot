@@ -1,16 +1,13 @@
-.carousel-item img {
-  height: 300px;   /* or whatever height */
-  width: 100%;
-  object-fit: cover;
+.carousel-item.active, .carousel-item-next, .carousel-item-prev {
+  display: flex;
+  justify-content: center;
 }
 
-.carousel h1 {
-  position: absolute;
-    bottom: 50%;
-    transform: translateY(50%);
-    left: 20px;
-    z-index: 1;
-    color: white;
-    text-shadow: 3px 3px 0px red;
-    background: rgba(255, 255, 0, .3);
+.carousel-item img {
+    margin: 10px;
+    height: 350px;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
