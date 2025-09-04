@@ -6,7 +6,6 @@
      data-mapbox-user-lng-value="<%= @user_lng %>"
      data-mapbox-locations-value="<%= @locations.map { |l| { lat: l.lat, lng: l.lng, name: l.name } }.to_json %>">
 </div>
-
 <div class="container my-3">
   <%# <%= @locations.count%>
   <%if @locations.any? %>

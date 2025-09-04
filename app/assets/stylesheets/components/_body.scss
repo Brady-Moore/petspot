@@ -5,3 +5,11 @@ body{
 .pointer {
   cursor: pointer;
 }
+
+.scrollable-content {
+  scrollbar-width: none;
+}
+
+.scrollable-content::-webkit-scrollbar {
+  display: none;
+}
