@@ -97,7 +97,7 @@ yoyogi = Location.create!(
   source: "seed"
 )
 
-file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756705268/1311301001_51_kjljy0.jpg")
+file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756993476/en2bp45y9gpe84qln7cm1393pbj9_uwypff.jpg")
 yoyogi.photos.attach(io: file, filename: "yoyogi.jpg", content_type: "image/jpg")
 
 
@@ -116,7 +116,7 @@ komazawa = Location.create!(
   source: "seed"
 )
 
-file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756705295/1311201002_71_qpmi4i.jpg")
+file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756993475/g0wo9s44n4v18rxda1saj355gr3r_pfajie.jpg")
 komazawa.photos.attach(io: file, filename: "komazawa.jpg", content_type: "image/jpg")
 
 bowls = Location.create!(
@@ -134,7 +134,7 @@ bowls = Location.create!(
   source: "seed"
 )
 
-file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756707637/top05_fym8eo.png")
+file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756993477/pornjq80mmz1ahev53hnxziyk5io_dajeqp.png")
 bowls.photos.attach(io: file, filename: "bowls_cafe.jpg", content_type: "image/png")
 
 dog_dept = Location.create!(
@@ -152,7 +152,7 @@ dog_dept = Location.create!(
   source: "seed"
 )
 
-file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756706659/image-49-1024x683_gok1fw.png")
+file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756993477/1xbrr0lyb945tw5cxjncm39m59y3_kvfwa6.png")
 dog_dept.photos.attach(io: file, filename: "dog_dept.jpg", content_type: "image/png")
 
 kiba_park = Location.create!(
@@ -170,7 +170,7 @@ kiba_park = Location.create!(
   source: "seed"
 )
 
-file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756707092/d3e15506f0291ccf789dfda05d082be1c19a5974_nwufuj.jpg")
+file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756993476/ga5rwr53pyrv75z4720pvpuccmx8_zjtxy8.jpg")
 kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "image/jpg")
 
   wonderful_nature_village = Location.create!(
@@ -187,7 +187,7 @@ kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "imag
     amenities: [Amenity.find_by(key: "water")]
   )
 
-    file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756992582/0uld946izc4sunp5olk7xjcl3ovg_q9bxy6.jpg")
+    file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756993475/0uld946izc4sunp5olk7xjcl3ovg_q9bxy6_djxkok.jpg")
   wonderful_nature_village.photos.attach(io: file, filename: "wonderful_nature_village.jpg", content_type: "image/jpg")
 
   wankonoshippo = Location.create!(
@@ -204,7 +204,7 @@ kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "imag
     amenities: [Amenity.find_by(key: "water")]
   )
 
-    file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756989741/Screenshot_from_2025-09-04_21-42-02_gxhmit.png")
+    file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756993477/4j3pp9jmeit13dryzjxrs2kh0exy_yykaro.png")
     wankonoshippo.photos.attach(io: file, filename: "wankonoshippo.png", content_type: "image/png")
 
   sippopo_dogrun = Location.create!(
@@ -221,7 +221,7 @@ kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "imag
     amenities: [Amenity.find_by(key: "water")]
   )
 
-  file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756983425/production/2fi1odix3peqtn8h4y97ccc89p7f.jpg")
+  file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756993475/wililhf1pkr5s9waetnsd15kgd88_wy00hy.jpg")
   sippopo_dogrun.photos.attach(io: file, filename: "sippopo_dogrun.jpg", content_type: "image/jpg")
 
 
@@ -239,7 +239,7 @@ kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "imag
     amenities: [Amenity.find_by(key: "water")]
   )
 
-  file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756983425/production/twnr685hsr4lfber49wdridxum2t.jpg")
+  file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756993476/mu985o05ysc7auj1ln0864ipw35t_qvsehh.jpg")
   minato_dog_park.photos.attach(io: file, filename: "minato_dog_park.jpg", content_type: "image/jpg")
 
 
@@ -257,7 +257,7 @@ kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "imag
     amenities: [Amenity.find_by(key: "water")]
   )
 
-  file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756983426/production/1ayos46h0q5zlx8a4fszf6gmr1p6.jpg")
+  file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756993476/akavuv0squdhlqstg0irjkwt8a2v_wiqnhi.jpg")
   dog_park_meguro.photos.attach(io: file, filename: "dog_park_meguro.jpg", content_type: "image/jpg")
 
 
@@ -275,7 +275,7 @@ kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "imag
     amenities: [Amenity.find_by(key: "water")]
   )
 
-   file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756990195/E8_98_86_E8_8A_B1_E6_81_92_E6_98_A5_E5_9C_92240331_E3_82_BF_E3_82_AB_E3_83_88_E3_82_AA_E3_82_B3_E3_83_92_E3_82_AC_E3_83_B3_E3_82_B6_E3_82_AF_E3_83_A9_20_285_29_zumyrm.jpg")
+   file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756993476/z0f55wzhbnasm4ntob4t1snw95xu_sal4oz.jpg")
   roka_koshuen_dog_run.photos.attach(io: file, filename: "roka_koshuen_dog_run.jpg", content_type: "image/jpg")
 
 puts "Assigning amenities..."
