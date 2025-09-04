@@ -51,7 +51,10 @@
     <% end %>
   <% end %>
 </p>
-<p class="ps-3 location-map thick-text"><i class="fa-solid fa-location-dot"></i> <%= @location.city %>, <%= @location.prefecture %></p>
+<div class="d-flex justify-content-between align-items-center">
+  <p class="ps-3 location-map thick-text"><i class="fa-solid fa-location-dot"></i> <%= @location.city %>, <%= @location.prefecture %></p>
+  <p class="pe-3 location-map thick-text"><i class="fa-solid fa-phone"></i> <%= @location.phone %></p>
+</div>
 <!-- map display here -->
 <div class="container">
   <div id="location-map"

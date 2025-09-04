@@ -1,5 +1,5 @@
 <div id="carousel" class="carousel slide" data-bs-ride="carousel">
-    <h1>PetSpot</h1>
+  <h1>PetSpot</h1>
     <div class="carousel-inner">
       <% @locations.each_with_index do |location, index| %>
         <div class="carousel-item<%= index == 0 ? " active" : "" %>">
@@ -8,12 +8,29 @@
           <% else %>
             <%= image_tag "no_img.png", class: "d-block w-100", alt: location.name %>
           <% end %>
-        <p><%= location.name %></p>
+          <p><%= location.name %></p>
         </div>
-      <% end %>
-    </div>
-  </div>
+     <% end %>
+   </div>
+ </div>
 <%= render "locations/search", groups: @groups %>
-
-  <%# photo example %>
-   <%# <%= image_tag "rui-alves-bUueTEY-FOc-unsplash.jpg", class: "d-block w-100", alt: "Dog"%>
+<div class="container scrollable-content">
+  <h3 class="mt-0">Most popular </h3>
+  <div class="row flex-nowrap overflow-scroll">
+    <% @popular.each do |location| %>
+      <div class="col-6 col-md-6 scol-lg-4 flex-grow-1">
+        <%= render "locations/card", location: location %>
+      </div>
+    <% end %>
+  </div>
+  <h3 class="mt-4">Most recent </h3>
+  <div class="row flex-nowrap overflow-scroll">
+    <% @recent.each do |location| %>
+      <div class="col-6 col-md-6 scol-lg-4 flex-grow-1">
+        <%= render "locations/card", location: location %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<%# photo example %>
+<%# <%= image_tag "rui-alves-bUueTEY-FOc-unsplash.jpg", class: "d-block w-100", alt: "Dog"%>
