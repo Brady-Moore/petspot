@@ -4,7 +4,7 @@
     <% if @favorites.any? %>
       <div class="cards">
         <% @favorites.each do |fav| %>
-          <div id="<%= dom_id(fav) %>" class="card-trip my-3 position-relative">
+          <div id="<%= dom_id(fav) %>" class="card-trip my-3 position-relative brdr-gray shadow">
             <!-- Delete (top-right) -->
             <%= link_to favorite_path(fav),
                       data: { turbo_method: :delete, turbo_confirm: "Remove #{fav.name} from favorites?" },
