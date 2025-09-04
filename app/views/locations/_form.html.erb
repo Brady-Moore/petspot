@@ -1,10 +1,17 @@
-<%= simple_form_for location do |f| %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.input :name %>
-  <%= f.input :category, collection: Location::CATEGORIES, include_blank: false %>
-  <%= f.input :address %>
-  <%= f.input :city %>
-  <%= f.input :phone %>
-  <%= render "locations/filters" %>
-  <%= f.submit class: "btn btn-button mb-5 rounded-5 review-text-color-bold" %>
-<% end %>
+<div
+  data-controller="pic-with-location"
+  data-pic-with-location-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+>
+  <%= simple_form_for location do |f| %>
+    <div id="map-location" data-pic-with-location-target="map" class="d-none" style="height: 300px; width: 100%;"></div>
+    <%= f.input :photos, as: :file, input_html: { multiple: true, data: { action: "input->pic-with-location#getCoordinates" }} %>
+    <%= f.input :name %>
+    <%= f.input :category, collection: Location::CATEGORIES, include_blank: false %>
+    <%= f.input :lat, as: :hidden, input_html: {data: {pic_with_location_target: "lat"}} %>
+    <%= f.input :lng, as: :hidden, input_html: {data: {pic_with_location_target: "lng"}} %>
+    <%= f.input :city,  as: :hidden, input_html: {data: {pic_with_location_target: "city"}} %>
+    <%= f.input :prefecture,as: :hidden, input_html: {data: {pic_with_location_target: "prefecture"}} %>
+    <%= render "locations/filters" %>
+    <%= f.submit class: "btn btn-button mb-5 rounded-5 review-text-color-bold" %>
+  <% end %>
+</div>

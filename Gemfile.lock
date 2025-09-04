@@ -137,6 +137,10 @@ GEM
     erb (5.0.2)
     erubi (1.13.1)
     execjs (2.10.0)
+    exiftool (1.2.7)
+      json
+    exiftool_vendored (13.34.0)
+      exiftool (>= 0.7.0)
     faraday (2.13.4)
       faraday-net_http (>= 2.0, < 3.5)
       json
@@ -363,6 +367,7 @@ DEPENDENCIES
   debug
   devise
   dotenv-rails
+  exiftool_vendored
   font-awesome-sass (~> 6.1)
   importmap-rails
   jbuilder

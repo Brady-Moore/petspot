@@ -77,3 +77,4 @@ end
 gem "acts_as_favoritor", "~> 6.0"
 gem 'cloudinary'
 gem "pg_search"
+gem "exiftool_vendored"
