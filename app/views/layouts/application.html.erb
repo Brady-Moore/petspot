@@ -15,7 +15,9 @@
     <%= render 'shared/ios_pwa_links' %>
   </head>
   <body class="pt-5">
-    <%= render "shared/top_bar" %>
+    <% unless current_page?('/') %>
+      <%= render "shared/top_bar" %>
+    <% end %>
     <%= render "shared/search_canvas" %>
     <%= render "shared/flashes" %>
     <%= yield %>
