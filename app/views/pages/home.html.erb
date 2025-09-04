@@ -2,7 +2,7 @@
   <h1>PetSpot</h1>
     <div class="carousel-inner">
       <% @locations.each_with_index do |location, index| %>
-        <div class="carousel-item<%= index == 0 ? " active" : "" %>">
+        <div class="carousel-item home-img <%= index == 0 ? " active" : "" %>">
           <% if location.photos.attached? %>
             <%= cl_image_tag location.photos.first.key, class: "d-block", alt: location.name %>
           <% else %>
