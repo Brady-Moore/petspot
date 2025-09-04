@@ -1,0 +1,16 @@
+.animation {
+  animation: grow-in 1.4s ease-out forwards;
+  transform-origin: center center; // grow from the middle
+}
+
+@keyframes grow-in {
+  from {
+    opacity: 0;
+    height: 0;
+  }
+  to {
+    transform: scale(1); // full size
+    opacity: 1;
+    height: 300px;
+  }
+}
