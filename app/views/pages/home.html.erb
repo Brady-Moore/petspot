@@ -16,18 +16,18 @@
 <%= render "locations/search", groups: @groups %>
 <div class="container scrollable-content">
   <h3 class="mt-0">Most popular </h3>
-  <div class="row flex-nowrap overflow-scroll">
+  <div class="row flex-nowrap overflow-scroll py-4">
     <% @popular.each do |location| %>
-      <div class="col-6 col-md-6 scol-lg-4 flex-grow-1">
-        <%= render "locations/card", location: location %>
+      <div class="col-5 col-md-5 col-lg-4 flex-grow-1">
+        <%= render "locations/new_card", location: location %>
       </div>
     <% end %>
   </div>
   <h3 class="mt-4">Most recent </h3>
-  <div class="row flex-nowrap overflow-scroll">
+  <div class="row flex-nowrap overflow-scroll py-4">
     <% @recent.each do |location| %>
-      <div class="col-6 col-md-6 scol-lg-4 flex-grow-1">
-        <%= render "locations/card", location: location %>
+      <div class="col-5 col-md-5 col-lg-4 flex-grow-1">
+        <%= render "locations/new_card", location: location %>
       </div>
     <% end %>
   </div>

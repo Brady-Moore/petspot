@@ -2,13 +2,13 @@
   &.yellow-color {
     --bs-bg-opacity: 1;
     background-color: rgb(251, 206, 101) !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 6px rgba(116, 116, 116, 0.5);
   }
   label {
     padding: 6px 8px;
     margin:6px;
     border-radius: 200px;
-    box-shadow:0 0 0 2px #006aea;
+    // box-shadow:0 0 0 2px #006aea;
     display:flex;
     background: #6099de;
 

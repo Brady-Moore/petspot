@@ -1,6 +1,6 @@
 <%= simple_form_for :search, url: locations_path, method: :get do |f| %>
-  <div class="search-form-control form-group">
-    <input class="form-control string required" placeholder="Search location" value="<%= params[:query] %>" type="text" name="query" id="search_query" />
+  <div class="search-form-control form-group brdr-gray">
+    <input class="form-control string required brdr-gray" placeholder="Search location" value="<%= params[:query] %>" type="text" name="query" id="search_query" />
     <button name="button" type="submit" class="btn btn-info rounded-circle">
       <i class="fas fa-search"></i>
     </button>
