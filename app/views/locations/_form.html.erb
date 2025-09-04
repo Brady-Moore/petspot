@@ -3,8 +3,8 @@
   data-pic-with-location-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
 >
   <%= simple_form_for location do |f| %>
-    <div id="map-location" data-pic-with-location-target="map" class="d-none" style="height: 300px; width: 100%;"></div>
     <%= f.input :photos, as: :file, input_html: { multiple: true, data: { action: "input->pic-with-location#getCoordinates" }} %>
+     <div id="map-location" data-pic-with-location-target="map" class="d-none animation shadow mb-3 brdr-gray" style="height: 300px; width: 100%;"></div>
     <%= f.input :name %>
     <%= f.input :category, collection: Location::CATEGORIES, include_blank: false %>
     <%= f.input :lat, as: :hidden, input_html: {data: {pic_with_location_target: "lat"}} %>

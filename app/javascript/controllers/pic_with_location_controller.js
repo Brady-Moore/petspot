@@ -17,7 +17,7 @@ export default class extends Controller {
       container: this.mapTarget,
       style: "mapbox://styles/mapbox/streets-v12",
       center: [this.userLngValue || 139.6917, this.userLatValue || 35.6895],
-      zoom: 12,
+      zoom: 15,
       attributionControl: true,
     })
   }
