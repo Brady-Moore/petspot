@@ -14,10 +14,10 @@
     <link rel="manifest" href="<%= asset_path 'manifest.json' %>">
     <%= render 'shared/ios_pwa_links' %>
   </head>
+  <% unless current_page?('/') %>
   <body class="pt-5">
-    <% unless current_page?('/') %>
       <%= render "shared/top_bar" %>
-    <% end %>
+  <% end %>
     <%= render "shared/search_canvas" %>
     <%= render "shared/flashes" %>
     <%= yield %>
