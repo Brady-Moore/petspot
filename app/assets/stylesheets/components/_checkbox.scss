@@ -43,11 +43,11 @@
       border-radius:50%;
     }
     i::before {
-      opacity: 0;
+      opacity: 0.3;
     }
 
     &:has(.checkbox:checked) {
-      background: #9067cc;
+      background: #0552b0;
       i::before {
         opacity: 1;
       }
