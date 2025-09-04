@@ -7,7 +7,7 @@
           <% @groups[2].each do |amenity| %>
             <label for="<%= amenity.key%>">
               <i class="fa-solid fa-paw fa-rotate-by" style="--fa-rotate-angle: -20deg;" ></i>
-              <span><%= amenity.label%></span>
+              <span><%= amenity.key.humanize%></span>
               <input type="checkbox" name="amenities[]" class="checkbox" <%= "checked" if params[:amenities]&.include?(amenity.key) %> id="<%= amenity.key%>" value="<%= amenity.key%>">
             </label>
           <% end %>
@@ -16,7 +16,7 @@
           <% @groups[1].each do |amenity| %>
             <label for="<%= amenity.key%>">
               <i class="fa-solid fa-paw fa-rotate-by" style="--fa-rotate-angle: -20deg;" ></i>
-              <span><%= amenity.label%></span>
+              <span><%= amenity.key.humanize%></span>
               <input type="checkbox" name="amenities[]"class="checkbox" <%= "checked" if params[:amenities]&.include?(amenity.key) %> id="<%= amenity.key%>" value="<%= amenity.key%>">
             </label>
           <% end %>
@@ -28,7 +28,7 @@
               <% @groups[0].each do |amenity| %>
                 <label for="<%= amenity.key%>">
                   <i class="fa-solid fa-paw fa-rotate-by" style="--fa-rotate-angle: -20deg;" ></i>
-                  <span><%= amenity.label%></span>
+                  <span><%= amenity.key.humanize%></span>
                   <input type="checkbox" name="amenities[]" class="checkbox" <%= "checked" if params[:amenities]&.include?(amenity.key) %> id="<%= amenity.key%>" value="<%= amenity.key%>">
                 </label>
               <% end %>
@@ -37,7 +37,7 @@
               <% @groups[3].each do |amenity| %>
                 <label for="<%= amenity.key%>">
                   <i class="fa-solid fa-paw fa-rotate-by" style="--fa-rotate-angle: -20deg;" ></i>
-                  <span><%= amenity.label%></span>
+                  <span><%= amenity.key.humanize%></span>
                   <input type="checkbox" name="amenities[]"class="checkbox" <%= "checked" if params[:amenities]&.include?(amenity.key) %> id="<%= amenity.key%>" value="<%= amenity.key%>">
                 </label>
               <% end %>
