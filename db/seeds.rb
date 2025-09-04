@@ -186,8 +186,8 @@ kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "imag
     amenities: [Amenity.find_by(key: "water")]
   )
 
-    file = URI.open("https://lh3.googleusercontent.com/gps-cs-s/AC9h4nruo4xjsYD-eS06m7_ahEMjbH12pPkGj_uZYMptSh34XQQyHWNjlUr4vwJqh7vwPC0m8cLU7GQv1r4QrgZTgB049lcx-D0068lPhE4udowLSZ91cMsajuTXa6uZY4Dh_AD-xDDl=w408-h306-k-no")
-  kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "image/jpg")
+    file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756983424/production/u0mdmr1r6bl7r10296r0uet7e4q1.jpg")
+  wonderful_nature_village.photos.attach(io: file, filename: "wonderful_nature_village.jpg", content_type: "image/jpg")
 
   wankonoshippo = Location.create!(
     name: "Wankonoshippo",
@@ -203,11 +203,11 @@ kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "imag
     amenities: [Amenity.find_by(key: "water")]
   )
 
-    file = URI.open("https://lh3.googleusercontent.com/gps-cs-s/AC9h4nruo4xjsYD-eS06m7_ahEMjbH12pPkGj_uZYMptSh34XQQyHWNjlUr4vwJqh7vwPC0m8cLU7GQv1r4QrgZTgB049lcx-D0068lPhE4udowLSZ91cMsajuTXa6uZY4Dh_AD-xDDl=w408-h306-k-no")
-    kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "image/jpg")
+    file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756989741/Screenshot_from_2025-09-04_21-42-02_gxhmit.png")
+    wankonoshippo.photos.attach(io: file, filename: "wankonoshippo.png", content_type: "image/png")
 
   sippopo_dogrun = Location.create!(
-    name: "SIPPOPO DOGRUN",
+    name: "Sippopo Dog Run",
     category: "Dog run",
     address: "5 Chome-2-16 Chigasakihigashi, Tsuzuki Ward, Yokohama, Kanagawa",
     city: "Chigasaki Higashi",
@@ -220,8 +220,8 @@ kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "imag
     amenities: [Amenity.find_by(key: "water")]
   )
 
-  file = URI.open("https://lh3.googleusercontent.com/gps-cs-s/AC9h4nq5_UlGefvBem8AT8UO5dlZwQASFLJoi0hCcCsYvLpA01fGEmL1JD3wJGkjTo23zVJRRiNfztmoLH_39ZrR5gMOUYOBYllrpBIH-YiJ4GE1FfGzaOo1PaRGZi0CysMxpKKHWcXL0zcgEi6B=w408-h544-k-no")
-  kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "image/jpg")
+  file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756983425/production/2fi1odix3peqtn8h4y97ccc89p7f.jpg")
+  sippopo_dogrun.photos.attach(io: file, filename: "sippopo_dogrun.jpg", content_type: "image/jpg")
 
 
   minato_dog_park = Location.create!(
@@ -238,12 +238,13 @@ kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "imag
     amenities: [Amenity.find_by(key: "water")]
   )
 
-  file = URI.open("https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqGW50Zl4ZOMVUfiz6NtC-RI2QLqcMHg13GfH-2wLnRhK_kUkLVXehZueKBsRu965gkU8GTnm4kmTMJmGpzdLFIu2nPuLqqHDKs7t4O9ctFRRJ6zoTSCIedZlIakFIhXRCF5UGa=w408-h544-k-no")
-  kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "image/jpg")
+  file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756983425/production/twnr685hsr4lfber49wdridxum2t.jpg")
+  minato_dog_park.photos.attach(io: file, filename: "minato_dog_park.jpg", content_type: "image/jpg")
 
 
   dog_park_meguro = Location.create!(
-    category: "Dog park Meguro",
+    name: "Dog Park Meguro",
+    category: "Dog park",
     address: "5-chōme-20-1 Yakumo, 世田谷区 Meguro City, Tokyo 152-0023",
     city: "Meguro City",
     prefecture: "Tokyo",
@@ -255,8 +256,8 @@ kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "imag
     amenities: [Amenity.find_by(key: "water")]
   )
 
-  file = URI.open("https://lh3.googleusercontent.com/gps-cs-s/AC9h4np3WUfqhR4A9hazU_HX0jzRNWwn8je6DqJTzSk5dg19lsPam6k6uNSq3j5GfnyuG1dpLpMoSw-uIJflo1JcaHP_i4JLUrmfHaC2A0XmOAYdfstL49eRRFdZL6KpdohgD66VAGZ9=w408-h570-k-no")
-  kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "image/jpg")
+  file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756983426/production/1ayos46h0q5zlx8a4fszf6gmr1p6.jpg")
+  dog_park_meguro.photos.attach(io: file, filename: "dog_park_meguro.jpg", content_type: "image/jpg")
 
 
   roka_koshuen_dog_run = Location.create!(
@@ -273,8 +274,8 @@ kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "imag
     amenities: [Amenity.find_by(key: "water")]
   )
 
-   file = URI.open("https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqNBXCVzhNxouW99IOQ7PSp_rvZuAErZ2cKeSezsQBgoqHzdE7TZmKV9YGZ3v1GXYLbJKpDmksrpkdIhtjWv1aAmLxnuRXUzzQdcYmYUTLPX0R9SvNylRnOM1HdMMk4aQe8O7OC=w408-h544-k-no")
-  kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "image/jpg")
+   file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756990195/E8_98_86_E8_8A_B1_E6_81_92_E6_98_A5_E5_9C_92240331_E3_82_BF_E3_82_AB_E3_83_88_E3_82_AA_E3_82_B3_E3_83_92_E3_82_AC_E3_83_B3_E3_82_B6_E3_82_AF_E3_83_A9_20_285_29_zumyrm.jpg")
+  roka_koshuen_dog_run.photos.attach(io: file, filename: "roka_koshuen_dog_run.jpg", content_type: "image/jpg")
 
 puts "Assigning amenities..."
 
