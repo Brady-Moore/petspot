@@ -284,7 +284,7 @@ kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "imag
     lat: "35.639872630837424",
     lng: "139.6982103792007",
     phone: "033302501",
-    amenities: Amenity.where(key: ["water", "warm"])
+    amenities: Amenity.where(key: ["beds", "menu", "water", "warm"])
   )
   file = URI.open("https://good-life-with-dog.com/wp-content/uploads/2018/11/181129_SLOW-TABLE_000.jpg")
   cafe_slow_table.photos.attach(io: file, filename: "cafe_slow_table.jpg", content_type: "image/jpg")
@@ -296,7 +296,7 @@ kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "imag
     prefecture: "Tokyo",
     lat: "35.62930308717976",
     lng: "139.71243972883667",
-    amenities: Amenity.where(key: ["beds", "menu", "water"])
+    amenities: Amenity.where(key: ["beds", "menu", "water", "warm"])
   )
   file = URI.open("https://pomeranianlife.com/wp-content/uploads/2024/10/dd08cd9f872581ab438bc7eb6226ad97-1024x682.jpg")
   bibiche.photos.attach(io: file, filename: "bibiche.jpg", content_type: "image/jpg")
@@ -308,7 +308,7 @@ kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "imag
     prefecture: "Tokyo",
     lat: "35.652214609226036",
     lng: "139.7125345733212",
-    amenities: Amenity.where(key: ["beds", "menu"])
+     amenities: Amenity.where(key: ["beds", "menu", "water", "warm"])
    )
 
   file = URI.open("https://cdn-ak.f.st-hatena.com/images/fotolife/R/RICO2000/20201116/20201116194212.jpg")
@@ -321,7 +321,7 @@ kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "imag
     prefecture: "Tokyo",
     lat: "35.64687281466185",
     lng: "139.68544413373385",
-    amenities: Amenity.where(key: ["water", "warm"])
+    amenities: Amenity.where(key: ["beds", "menu", "water", "warm"])
   )
   file = URI.open("https://wanwan-dog.jp/wp-content/uploads/IMG_2723.jpg")
   inu_mimi_cafe.photos.attach(io: file, filename: "inu_mimi_cafe.jpg", content_type: "image/jpg")
@@ -333,7 +333,7 @@ diner = Location.create!(
     prefecture: "Ibaraki",
     lat: "36.399078314684914",
     lng: "140.5422881967227",
-    amenities: Amenity.where(key: ["menu", "beds"])
+    amenities: Amenity.where(key: ["beds", "menu", "water", "warm"])
   )
   file = URI.open("https://image.co-trip.jp/common/userpost/images_l/202502/31158_13074033_sub_0_740431924.jpg")
   diner.photos.attach(io: file, filename: "diner.jpg", content_type: "image/jpg")
