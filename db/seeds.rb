@@ -456,6 +456,20 @@ Review.create!(
   body: "My dog didn't like the food:("
 )
 
+Review.create!(
+  location: cafe_slow_table,
+  user: bob,
+  rating: 4,
+  body: "Staff was very friendly and the cafe itself was very cozy."
+)
+
+Review.create!(
+  location: cafe_slow_table,
+  user: alice,
+  rating: 5,
+  body: "The food was amazing, my dog loved the treats and the staff was so nice."
+)
+
 
 puts "Seeding favorites..."
 
