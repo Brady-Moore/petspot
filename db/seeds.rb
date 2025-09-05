@@ -296,7 +296,7 @@ kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "imag
     prefecture: "Tokyo",
     lat: "35.62930308717976",
     lng: "139.71243972883667",
-    amenities: Amenity.where(key: ["water", "warm"])
+    amenities: Amenity.where(key: ["beds", "menu", "water"])
   )
   file = URI.open("https://pomeranianlife.com/wp-content/uploads/2024/10/dd08cd9f872581ab438bc7eb6226ad97-1024x682.jpg")
   bibiche.photos.attach(io: file, filename: "bibiche.jpg", content_type: "image/jpg")
@@ -308,7 +308,7 @@ kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "imag
     prefecture: "Tokyo",
     lat: "35.652214609226036",
     lng: "139.7125345733212",
-    amenities: Amenity.where(key: ["water", "warm"])
+    amenities: Amenity.where(key: ["beds", "menu"])
    )
 
   file = URI.open("https://cdn-ak.f.st-hatena.com/images/fotolife/R/RICO2000/20201116/20201116194212.jpg")
