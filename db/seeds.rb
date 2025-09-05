@@ -86,7 +86,7 @@ yoyogi = Location.create!(
   name: "Yoyogi Park Dog Run",
   category: "Park",
   address: "2-1 Yoyogi-Kamizonocho, Shibuya City, Tokyo",
-  city: "Tokyo",
+  city: "Shibuya",
   prefecture: "Tokyo",
   postal_code: "151-0052",
   lat: 35.6728,
@@ -96,7 +96,7 @@ yoyogi = Location.create!(
   source: "seed"
 )
 
-file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756705268/1311301001_51_kjljy0.jpg")
+file = URI.open("https://tokyo-park.net/wp-content/uploads/1311301001_51.jpg")
 yoyogi.photos.attach(io: file, filename: "yoyogi.jpg", content_type: "image/jpg")
 
 
@@ -115,7 +115,7 @@ komazawa = Location.create!(
   source: "seed"
 )
 
-file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756705295/1311201002_71_qpmi4i.jpg")
+file = URI.open("https://tokyo-park.net/wp-content/uploads/1311201002_51.jpg")
 komazawa.photos.attach(io: file, filename: "komazawa.jpg", content_type: "image/jpg")
 
 bowls = Location.create!(
@@ -133,8 +133,8 @@ bowls = Location.create!(
   source: "seed"
 )
 
-file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756707637/top05_fym8eo.png")
-bowls.photos.attach(io: file, filename: "bowls_cafe.jpg", content_type: "image/png")
+file = URI.open("https://news.cafesnap.me/wp-content/uploads/2019/12/07.jpg")
+bowls.photos.attach(io: file, filename: "bowls.jpg", content_type: "image/jpg")
 
 dog_dept = Location.create!(
   owner: nil,
@@ -151,8 +151,8 @@ dog_dept = Location.create!(
   source: "seed"
 )
 
-file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756706659/image-49-1024x683_gok1fw.png")
-dog_dept.photos.attach(io: file, filename: "dog_dept.jpg", content_type: "image/png")
+file = URI.open("https://rimage.gnst.jp/rest/img/ce4bpy0g0000/s_001e.jpg")
+dog_dept.photos.attach(io: file, filename: "dog_dept.jpg", content_type: "image/jpg")
 
 kiba_park = Location.create!(
   owner: nil,
@@ -169,7 +169,7 @@ kiba_park = Location.create!(
   source: "seed"
 )
 
-file = URI.open("https://res.cloudinary.com/dwagybbxc/image/upload/v1756707092/d3e15506f0291ccf789dfda05d082be1c19a5974_nwufuj.jpg")
+file = URI.open("https://tokyo-park.net/wp-content/uploads/1310801002_51.jpg")
 kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "image/jpg")
 
   wonderful_nature_village = Location.create!(
@@ -186,8 +186,8 @@ kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "imag
     amenities: [Amenity.find_by(key: "water")]
   )
 
-    file = URI.open("https://lh3.googleusercontent.com/gps-cs-s/AC9h4nruo4xjsYD-eS06m7_ahEMjbH12pPkGj_uZYMptSh34XQQyHWNjlUr4vwJqh7vwPC0m8cLU7GQv1r4QrgZTgB049lcx-D0068lPhE4udowLSZ91cMsajuTXa6uZY4Dh_AD-xDDl=w408-h306-k-no")
-  kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "image/jpg")
+    file = URI.open("https://svcstrg.cld.navitime.jp/imgfile/02301_14402339_01.jpg")
+  wonderful_nature_village.photos.attach(io: file, filename: "wonderful_nature_village.jpg", content_type: "image/jpg")
 
   wankonoshippo = Location.create!(
     name: "Wankonoshippo",
@@ -203,8 +203,8 @@ kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "imag
     amenities: [Amenity.find_by(key: "water")]
   )
 
-    file = URI.open("https://lh3.googleusercontent.com/gps-cs-s/AC9h4nruo4xjsYD-eS06m7_ahEMjbH12pPkGj_uZYMptSh34XQQyHWNjlUr4vwJqh7vwPC0m8cLU7GQv1r4QrgZTgB049lcx-D0068lPhE4udowLSZ91cMsajuTXa6uZY4Dh_AD-xDDl=w408-h306-k-no")
-    kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "image/jpg")
+    file = URI.open("https://wankonoshippp.com/wp-content/uploads/2025/05/IMG_6478.jpg")
+    wankonoshippo.photos.attach(io: file, filename: "wankonoshippo.jpg", content_type: "image/jpg")
 
   sippopo_dogrun = Location.create!(
     name: "SIPPOPO DOGRUN",
@@ -220,8 +220,8 @@ kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "imag
     amenities: [Amenity.find_by(key: "water")]
   )
 
-  file = URI.open("https://lh3.googleusercontent.com/gps-cs-s/AC9h4nq5_UlGefvBem8AT8UO5dlZwQASFLJoi0hCcCsYvLpA01fGEmL1JD3wJGkjTo23zVJRRiNfztmoLH_39ZrR5gMOUYOBYllrpBIH-YiJ4GE1FfGzaOo1PaRGZi0CysMxpKKHWcXL0zcgEi6B=w408-h544-k-no")
-  kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "image/jpg")
+  file = URI.open("https://www.honda.co.jp/dog/travel/data/sippopodogrun/image/01.jpg")
+  sippopo_dogrun.photos.attach(io: file, filename: "sippopo_dogrun.jpg", content_type: "image/jpg")
 
 
   minato_dog_park = Location.create!(
@@ -238,8 +238,8 @@ kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "imag
     amenities: [Amenity.find_by(key: "water")]
   )
 
-  file = URI.open("https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqGW50Zl4ZOMVUfiz6NtC-RI2QLqcMHg13GfH-2wLnRhK_kUkLVXehZueKBsRu965gkU8GTnm4kmTMJmGpzdLFIu2nPuLqqHDKs7t4O9ctFRRJ6zoTSCIedZlIakFIhXRCF5UGa=w408-h544-k-no")
-  kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "image/jpg")
+  file = URI.open("https://minatokankoprod.blob.core.windows.net/assets/2022/02/01/05/15/19/05%20DSCF9759.jpg")
+  minato_dog_park.photos.attach(io: file, filename: "minato_dog_park.jpg", content_type: "image/jpg")
 
 
   dog_park_meguro = Location.create!(
@@ -255,8 +255,8 @@ kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "imag
     amenities: [Amenity.find_by(key: "water")]
   )
 
-  file = URI.open("https://lh3.googleusercontent.com/gps-cs-s/AC9h4np3WUfqhR4A9hazU_HX0jzRNWwn8je6DqJTzSk5dg19lsPam6k6uNSq3j5GfnyuG1dpLpMoSw-uIJflo1JcaHP_i4JLUrmfHaC2A0XmOAYdfstL49eRRFdZL6KpdohgD66VAGZ9=w408-h570-k-no")
-  kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "image/jpg")
+  file = URI.open("https://d3ekkvinch1ig5.cloudfront.net/parkThumb/292772368.jpg")
+  dog_park_meguro.photos.attach(io: file, filename: "dog_park_meguro.jpg", content_type: "image/jpg")
 
 
   roka_koshuen_dog_run = Location.create!(
@@ -273,8 +273,59 @@ kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "imag
     amenities: [Amenity.find_by(key: "water")]
   )
 
-   file = URI.open("https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqNBXCVzhNxouW99IOQ7PSp_rvZuAErZ2cKeSezsQBgoqHzdE7TZmKV9YGZ3v1GXYLbJKpDmksrpkdIhtjWv1aAmLxnuRXUzzQdcYmYUTLPX0R9SvNylRnOM1HdMMk4aQe8O7OC=w408-h544-k-no")
-  kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "image/jpg")
+   file = URI.open("https://tokyo-park.net/wp-content/uploads/1320701004_61.jpg")
+  roka_koshuen_dog_run.photos.attach(io: file, filename: "roka_koshuen_dog_run.jpg", content_type: "image/jpg")
+
+  cafe_slow_table = Location.create!(
+    name: "Slow Table",
+    category: "Cafe",
+    city: "Meguro",
+    prefecture: "Tokyo",
+    lat: "35.639872630837424",
+    lng: "139.6982103792007",
+    phone: "033302501",
+    amenities: Amenity.where(key: ["water", "warm"])
+  )
+  file = URI.open("https://good-life-with-dog.com/wp-content/uploads/2018/11/181129_SLOW-TABLE_000.jpg")
+  cafe_slow_table.photos.attach(io: file, filename: "cafe_slow_table.jpg", content_type: "image/jpg")
+
+   bibiche = Location.create!(
+    name: "ドッグ バル BIBICHE （ビビバル",
+    category: "Cafe",
+    city: "Shinagawa",
+    prefecture: "Tokyo",
+    lat: "35.62930308717976",
+    lng: "139.71243972883667",
+    amenities: Amenity.where(key: ["water", "warm"])
+  )
+  file = URI.open("https://pomeranianlife.com/wp-content/uploads/2024/10/dd08cd9f872581ab438bc7eb6226ad97-1024x682.jpg")
+  bibiche.photos.attach(io: file, filename: "bibiche.jpg", content_type: "image/jpg")
+
+   areverie_terrace_table = Location.create!(
+    name: "Areverie Terrace Ebisu",
+    category: "Cafe",
+    city: "Shibuya",
+    prefecture: "Tokyo",
+    lat: "35.652214609226036",
+    lng: "139.7125345733212",
+    amenities: Amenity.where(key: ["water", "warm"])
+   )
+
+  file = URI.open("https://cdn-ak.f.st-hatena.com/images/fotolife/R/RICO2000/20201116/20201116194212.jpg")
+  areverie_terrace_table.photos.attach(io: file, filename: "areverie_terrace_table.jpg", content_type: "image/jpg")
+
+  inu_mimi_cafe = Location.create!(
+    name: "Inu Mimi Cafe",
+    category: "Cafe",
+    city: "Meguro",
+    prefecture: "Tokyo",
+    lat: "35.64687281466185",
+    lng: "139.68544413373385",
+    amenities: Amenity.where(key: ["water", "warm"])
+  )
+  file = URI.open("https://wanwan-dog.jp/wp-content/uploads/IMG_2723.jpg")
+  inu_mimi_cafe.photos.attach(io: file, filename: "inu_mimi_cafe.jpg", content_type: "image/jpg")
+
 
 puts "Assigning amenities..."
 
@@ -386,6 +437,14 @@ Review.create!(
   rating: 4,
   body: "Leash hooks at tables are so convenient. Dessert was great."
 )
+
+Review.create!(
+  location: inu_mimi_cafe,
+  user: alice,
+  rating: 2,
+  body: "My dog didn't like the food:("
+)
+
 
 puts "Seeding favorites..."
 
