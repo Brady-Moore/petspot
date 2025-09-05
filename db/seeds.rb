@@ -326,6 +326,17 @@ kiba_park.photos.attach(io: file, filename: "kiba_park.jpg", content_type: "imag
   file = URI.open("https://wanwan-dog.jp/wp-content/uploads/IMG_2723.jpg")
   inu_mimi_cafe.photos.attach(io: file, filename: "inu_mimi_cafe.jpg", content_type: "image/jpg")
 
+diner = Location.create!(
+    name: "33 Diner",
+    category: "Cafe",
+    city: "Hitachinaka",
+    prefecture: "Ibaraki",
+    lat: "36.399078314684914",
+    lng: "140.5422881967227",
+    amenities: Amenity.where(key: ["menu", "beds"])
+  )
+  file = URI.open("https://image.co-trip.jp/common/userpost/images_l/202502/31158_13074033_sub_0_740431924.jpg")
+  diner.photos.attach(io: file, filename: "diner.jpg", content_type: "image/jpg")
 
 puts "Assigning amenities..."
 
